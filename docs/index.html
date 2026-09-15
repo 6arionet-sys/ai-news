@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>AI Daily ニュース</title>
+  
+  <!-- PWA & Mobile Meta Tags -->
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="AI Daily">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icon-180.png">
+  <link rel="icon" type="image/png" href="./icon-192.png">
+
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #151c2c;
+      --card-border: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --purple: #a855f7;
+      --read-opacity: 0.65;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 80px;
+      min-height: 100vh;
+    }
+    /* ヘッダー */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--card-border);
+      padding: 12px 16px;
+      padding-top: max(12px, env(safe-area-inset-top));
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      color: #fff;
+    }
+    h1 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    .updated-text {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .mark-read-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .mark-read-btn:active {
+      background: rgba(255, 255, 255, 0.16);
+      transform: scale(0.96);
+    }
+
+    /* カテゴリタブバー */
+    .tabs-wrap {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 10px 16px 4px 16px;
+      display: flex;
+      gap: 8px;
+      scrollbar-width: none;
+    }
+    .tabs-wrap::-webkit-scrollbar {
+      display: none;
+    }
+    .tab-item {
+      display: inline-block;
+      padding: 6px 14px;
+      background: #1e293b;
+      color: var(--text-muted);
+      border-radius: 16px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .tab-item.active {
+      background: var(--accent);
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    /* メインコンテンツ */
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+    .category-section {
+      margin-bottom: 28px;
+    }
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .category-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .category-count {
+      font-size: 12px;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    /* 記事カード */
+    .article-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+      transition: transform 0.15s, opacity 0.2s, border-color 0.2s;
+      position: relative;
+    }
+    .article-card:active {
+      transform: scale(0.99);
+    }
+    .article-card.is-read {
+      opacity: var(--read-opacity);
+      border-color: transparent;
+    }
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .source-tag {
+      background: var(--accent-glow);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .card-summary {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #cbd5e1;
+      margin-bottom: 12px;
+      word-break: break-word;
+    }
+    .tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .tag-badge {
+      font-size: 11px;
+      color: #93c5fd;
+      background: rgba(59, 130, 246, 0.12);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .read-toggle-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 0;
+    }
+    .origin-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      padding: 24px 16px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--card-border);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      <div class="brand">
+        <div class="logo-badge">AI</div>
+        <div>
+          <h1>AI Daily</h1>
+          <div class="updated-text">更新: 2026/09/15 13:38 (24件)</div>
+        </div>
+      </div>
+      <button class="mark-read-btn" id="markAllBtn">全件既読</button>
+    </div>
+  </header>
+
+  <div class="tabs-wrap">
+    <a href="#all" class="tab-item active" onclick="switchTab(event, 'all')">すべて (24)</a>
+    <a href="#company" class="tab-item" onclick="switchTab(event, 'company')">企業・公式発表 (6)</a>
+    <a href="#japan" class="tab-item" onclick="switchTab(event, 'japan')">国内ニュース (6)</a>
+    <a href="#dev" class="tab-item" onclick="switchTab(event, 'dev')">開発者・トレンド (6)</a>
+    <a href="#research" class="tab-item" onclick="switchTab(event, 'research')">論文・先端研究 (6)</a>
+  </div>
+
+  <main id="mainContent">
+
+    <section class="category-section" id="section-company">
+      <div class="category-header">
+        <span class="category-title">企業・公式発表</span>
+        <span class="category-count">6件</span>
+      </div>
+
+      <article class="article-card" id="card-a946c901ea2bcdda762d770970f95ff2" data-id="a946c901ea2bcdda762d770970f95ff2">
+        <div class="meta-row">
+          <span class="source-tag">Anthropic News</span>
+          <span>09/15 04:33</span>
+        </div>
+        <h2 class="card-title">Top A.I. Leaders Call for Slowing Down A.I. Development - The New York Times</h2>
+        <p class="card-summary">Top A.I. Leaders Call for Slowing Down A.I. Development The New York Times Trump goes scorched earth on AI warnings, raging about data center opposition and regulation CNBC Trump wants to push tempo of AI race, countering tech leaders’ call for slowd</p>
+        <div class="tags-row"><span class="tag-badge">#Anthropic News</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('a946c901ea2bcdda762d770970f95ff2')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxQOE1BV1Q4UUYxLVRfaDNJVXVRbnNaQmdUMjBzbWJWRWtTcjlROWZqUjAtVGlob2NHVlB1NHVfRU5FY1dWT1UxR3RHakpVUTdzSGdvRmR2UFR2dzZxdHJ0ZXlMb0NsMVd1MDM1aUZ2VlpPeG9zSDZxRFpFWjNhQ0psM2RVYW8tM0ZKdTdDdG93?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('a946c901ea2bcdda762d770970f95ff2')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-c412b9cd21cf768ef72e4ef8548508e6" data-id="c412b9cd21cf768ef72e4ef8548508e6">
+        <div class="meta-row">
+          <span class="source-tag">Anthropic News</span>
+          <span>09/15 03:47</span>
+        </div>
+        <h2 class="card-title">Trump says AI safety fears a &#x27;hoax&#x27; as he rejects calls for greater safeguards - BBC</h2>
+        <p class="card-summary">Trump says AI safety fears a &#x27;hoax&#x27; as he rejects calls for greater safeguards BBC</p>
+        <div class="tags-row"><span class="tag-badge">#Anthropic News</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('c412b9cd21cf768ef72e4ef8548508e6')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTFBIZTRfbU9qV2pjcHdCVmNGbUo2NElLSzQwUFpqZ2E0cVVSZlpFTk9Lb3FQQ3FCV0NxTEMtZ1FaQVVWMFdXUks5djdEVHVqa0Z3YmJZTzdpejMza2c?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('c412b9cd21cf768ef72e4ef8548508e6')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-df917033fbc3d1ade4a13594a5c3ced0" data-id="df917033fbc3d1ade4a13594a5c3ced0">
+        <div class="meta-row">
+          <span class="source-tag">Anthropic News</span>
+          <span>09/15 03:44</span>
+        </div>
+        <h2 class="card-title">Former Anthropic researcher calls AI ‘uniquely terrifying’ - Fox News</h2>
+        <p class="card-summary">Former Anthropic researcher calls AI ‘uniquely terrifying’ Fox News</p>
+        <div class="tags-row"><span class="tag-badge">#Anthropic News</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('df917033fbc3d1ade4a13594a5c3ced0')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTFB3ZVlNck5JTDVRRER3dkVRNWlPbFNpM2RQVXBmZjBvdkExQXhzNTlsWGNBZG85Q1FCa1hxclQtal81VGhPUWcxZjhxdGtPU0p1NVBPMUVB?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('df917033fbc3d1ade4a13594a5c3ced0')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-6862ec99f32243e4609f51e5f25c6296" data-id="6862ec99f32243e4609f51e5f25c6296">
+        <div class="meta-row">
+          <span class="source-tag">Anthropic News</span>
+          <span>09/15 02:48</span>
+        </div>
+        <h2 class="card-title">Schwab scores exclusive (for now) contract with Anthropic and takes AI &#x27;driver&#x27;s seat&#x27; in RIA custody, analyst says, though others counter that it&#x27;s generic and late-coming - RIABiz</h2>
+        <p class="card-summary">Schwab scores exclusive (for now) contract with Anthropic and takes AI &#x27;driver&#x27;s seat&#x27; in RIA custody, analyst says, though others counter that it&#x27;s generic and late-coming RIABiz</p>
+        <div class="tags-row"><span class="tag-badge">#Anthropic News</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('6862ec99f32243e4609f51e5f25c6296')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://news.google.com/rss/articles/CBMioAJBVV95cUxPdUtjdmd0azNHNGtDQkpJVzNVYzludUltb1hRNk5KTGxpVXFZSUZXbk1YVmZHckswdUtkbUhiMzAwMDBWTDdNZXdqNlR1cUl0NzgtWE91cjB5eENVRWp1SzA3YTRFTGhwbHFYSDNibGhLVUpBT0Z3S01VLVh4eEd2UVdLZkhrSVBVcHdaa09OZEhLWTE2TmtnSzFGU09LUlNwdlpZbTlMWS1SMzZrUVZxNVJMTkdROHo1YUhIUU15X2xHeEg3eUZuSUFRYXpsbGpOTzhXdVExekNhUHhsX1JYbHV0Sk9PMDZDMFRDc3VqV3NxeGpCTmxXUEZocUJlczhXcG42LVZ5NTFaMjdJbHdXY1Q5S3VrbkVXLXZ6SnYtNXQ?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('6862ec99f32243e4609f51e5f25c6296')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-bbe9d26ab6638285a2a594a6bf438de9" data-id="bbe9d26ab6638285a2a594a6bf438de9">
+        <div class="meta-row">
+          <span class="source-tag">Anthropic News</span>
+          <span>09/15 01:30</span>
+        </div>
+        <h2 class="card-title">AI CEOs say they need to slow the pace of development. But will they? - The Guardian</h2>
+        <p class="card-summary">AI CEOs say they need to slow the pace of development. But will they? The Guardian</p>
+        <div class="tags-row"><span class="tag-badge">#Anthropic News</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('bbe9d26ab6638285a2a594a6bf438de9')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE5XQlp1T0FKUFNtVnFFME44cGFabC1iYlp4YXVWaWtXaWtfR0l3b1FRbEh1NTd2RmxjazNmcGIzX1lJQm1Ub2pMNDR3R0VYbG8tUGpOUXFuTUZXQWpiSERMOUdscExGZS05NzA3cWtmZWFjODFRZzg3YlFEWWNEQQ?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('bbe9d26ab6638285a2a594a6bf438de9')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-28af17d473c700f005f241486b49e80e" data-id="28af17d473c700f005f241486b49e80e">
+        <div class="meta-row">
+          <span class="source-tag">Anthropic News</span>
+          <span>09/15 00:54</span>
+        </div>
+        <h2 class="card-title">AI researcher Jacob Coxon reacts to Anderson Cooper&#x27;s interview with Anthropic CEO Dario Amodei - CNN</h2>
+        <p class="card-summary">AI researcher Jacob Coxon reacts to Anderson Cooper&#x27;s interview with Anthropic CEO Dario Amodei CNN</p>
+        <div class="tags-row"><span class="tag-badge">#Anthropic News</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('28af17d473c700f005f241486b49e80e')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTFBqeDR6T3k4dF9HZjA5aFJPc1NHUXpvM1J1ZnA2UDgtRkhfbXdfRXJFbDVWRXpvaTFwNVBabzY3VU51ZmtSNm9JQjNtcXlIak9id20yeGxDc1NwM2EtTmNGZ3NkV2dneHds?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('28af17d473c700f005f241486b49e80e')">元記事を読む →</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="category-section" id="section-japan">
+      <div class="category-header">
+        <span class="category-title">国内ニュース</span>
+        <span class="category-count">6件</span>
+      </div>
+
+      <article class="article-card" id="card-d1112e979522f402f03d49916cdc2602" data-id="d1112e979522f402f03d49916cdc2602">
+        <div class="meta-row">
+          <span class="source-tag">ITmedia AI+</span>
+          <span>09/15 01:08</span>
+        </div>
+        <h2 class="card-title">AI開発“減速論”過熱でソフトバンク、キオクシア株急落 その他AI関連株も</h2>
+        <p class="card-summary">米国の最先端AIモデルを開発する企業が、人類への脅威を防ぐためには開発ペースを落とす必要があると警告したことを受け、ソフトバンクやキオクシア、東京エレクトロンといったAI関連株が急落した。</p>
+        <div class="tags-row"><span class="tag-badge">#ITmedia AI+</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('d1112e979522f402f03d49916cdc2602')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.itmedia.co.jp/aiplus/article/2609/14/2000001462/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('d1112e979522f402f03d49916cdc2602')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-bceb5c9fe44809f5f7d6be4faef00e6c" data-id="bceb5c9fe44809f5f7d6be4faef00e6c">
+        <div class="meta-row">
+          <span class="source-tag">ITmedia AI+</span>
+          <span>09/14 23:15</span>
+        </div>
+        <h2 class="card-title">トランプ大統領、アモデイ氏を名指しで「完璧な小さい天使のふり」 「AIに必要なガードレールは強く賢い大統領だけ」</h2>
+        <p class="card-summary">トランプ米大統領はSNSへの投稿で、AIに必要なガードレールは強く賢い大統領だけで十分だと述べ、AI企業に対する刑事・規制上の強い権限を強調した。AnthropicのアモデイCEOを名指しで批判し、AI開発を妨げる動きを中国を利する陰謀だと非難して、米国の優位性を維持する姿勢を示した。</p>
+        <div class="tags-row"><span class="tag-badge">#ITmedia AI+</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('bceb5c9fe44809f5f7d6be4faef00e6c')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.itmedia.co.jp/news/article/2609/15/2000001470/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('bceb5c9fe44809f5f7d6be4faef00e6c')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-3ea301970f81e7b745e9016285c7d506" data-id="3ea301970f81e7b745e9016285c7d506">
+        <div class="meta-row">
+          <span class="source-tag">PIVOT (AI・ビジネス速報)</span>
+          <span>09/14 23:00</span>
+        </div>
+        <h2 class="card-title">エーアイセキュリティラボが、PIVOT「&amp; questions」に出演。AI時代に求められる「ととのう、セキュリティ」を解説 - PR TIMES</h2>
+        <p class="card-summary">エーアイセキュリティラボが、PIVOT「&amp; questions」に出演。AI時代に求められる「ととのう、セキュリティ」を解説 PR TIMES</p>
+        <div class="tags-row"><span class="tag-badge">#PIVOT (AI・ビジネス速報)</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('3ea301970f81e7b745e9016285c7d506')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE92Vl9qeWRWQlhwTVVxY3F1ZGRyd3dNaDFqUmpBektYa3VRQVlIczVEQWp0X2dNOG5pWF9TdzBEcG5PRnRLaFNIOWpEaW9JNkNJUFNvbU9VSG5iRDdISVhhZDh0V2d5WlNMTmc?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('3ea301970f81e7b745e9016285c7d506')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-d0fc60e3fe1b7f328e21c510e295eb34" data-id="d0fc60e3fe1b7f328e21c510e295eb34">
+        <div class="meta-row">
+          <span class="source-tag">ITmedia AI+</span>
+          <span>09/14 23:00</span>
+        </div>
+        <h2 class="card-title">生成AIを「別画面」で使い続けて本当によいのか？ 300人調査で見えた活用定着の“壁”</h2>
+        <p class="card-summary">生成AIの活用が広がる一方、最も定着している業務でも、7割は業務システムとは別の画面で生成AIを利用していた。こうした状況は、生成AI活用にどのような影響を及ぼしているのか。調査結果から実態を探る。</p>
+        <div class="tags-row"><span class="tag-badge">#ITmedia AI+</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('d0fc60e3fe1b7f328e21c510e295eb34')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://atmarkit.itmedia.co.jp/ait/articles/2609/15/news042.html" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('d0fc60e3fe1b7f328e21c510e295eb34')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-3b51e35e100568e4d313ce5a559bb28b" data-id="3b51e35e100568e4d313ce5a559bb28b">
+        <div class="meta-row">
+          <span class="source-tag">ITmedia AI+</span>
+          <span>09/14 23:00</span>
+        </div>
+        <h2 class="card-title">なぜ、会議支援AI市場が35・1％も成長？ 「議事録作成」で終わらないニーズとは</h2>
+        <p class="card-summary">国内の会議支援AI市場は2025年度に前年度比35.1％増と急伸した。汎用（はんよう）の生成AIツールでも議事録を作成できるのに、なぜ会議支援AIのニーズは伸び続けるのか。ITRの調査が示す、需要の変化とは。</p>
+        <div class="tags-row"><span class="tag-badge">#ITmedia AI+</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('3b51e35e100568e4d313ce5a559bb28b')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.itmedia.co.jp/enterprise/articles/2609/14/news023.html" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('3b51e35e100568e4d313ce5a559bb28b')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-844652e297bd4900ceb88eb09fd31b72" data-id="844652e297bd4900ceb88eb09fd31b72">
+        <div class="meta-row">
+          <span class="source-tag">ITmedia AI+</span>
+          <span>09/14 23:00</span>
+        </div>
+        <h2 class="card-title">ビル管理で進む「属人化」解消なるか 東京建物らが開設、新たな「基地」が持つ5つの機能</h2>
+        <p class="card-summary">毎日の安全で快適な生活を陰で支えてきた、ビルメンテナンス業界の在り方が大きく変わろうとしている。昨今の人手不足に加え、長年の課題である「ワンマン管理による属人化」の影響で、ノウハウの継承や若手育成が危ぶまれているのだ。</p>
+        <div class="tags-row"><span class="tag-badge">#ITmedia AI+</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('844652e297bd4900ceb88eb09fd31b72')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.itmedia.co.jp/business/articles/2609/15/news052.html" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('844652e297bd4900ceb88eb09fd31b72')">元記事を読む →</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="category-section" id="section-dev">
+      <div class="category-header">
+        <span class="category-title">開発者・トレンド</span>
+        <span class="category-count">6件</span>
+      </div>
+
+      <article class="article-card" id="card-7c80895c3858941f003abda9d8db8fca" data-id="7c80895c3858941f003abda9d8db8fca">
+        <div class="meta-row">
+          <span class="source-tag">Zenn (AI Topic)</span>
+          <span>09/14 22:30</span>
+        </div>
+        <h2 class="card-title">無人の claude -p に書込を閉じたつもりが、3つの見落としで開いていた</h2>
+        <p class="card-summary">無人で動かす claude -p のジョブに、書込先を決めたパターンの中だけに閉じたつもりで --allowed-tools &quot;Read,Write(//private/tmp/x/**)&quot; を渡していました。 配置前に権限を実測したら、パターンの外への書込が通り、実ファイルも生成されていました。 原因を調べると、Claude Code の公式ドキュメントに全部書いてありました。見落としは3つあります。①のファイルルールと③のリダイレクト判定は対話でも無人でも共通の仕様で、②の開始モードの決まり</p>
+        <div class="tags-row"><span class="tag-badge">#Zenn (AI Topic)</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('7c80895c3858941f003abda9d8db8fca')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://zenn.dev/masamitsu_sera/articles/813bb4d7af1028" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('7c80895c3858941f003abda9d8db8fca')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-19aaab5810b8214e220113ebd496a26e" data-id="19aaab5810b8214e220113ebd496a26e">
+        <div class="meta-row">
+          <span class="source-tag">Zenn (AI Topic)</span>
+          <span>09/14 22:21</span>
+        </div>
+        <h2 class="card-title">「セキュリティ指摘があればAIがPRを止める」——Codexを作った本人の回のどれが伸びるか（#31 投稿前予測）</h2>
+        <p class="card-summary">この記事は何か 海外の Tech Talk を日本語の縦型ショートに切り出して TikTok に投稿しています。1本の元動画から9〜11本のクリップを作り、投稿する前に「どれが伸びるか」を予測して保存し、あとで実測と突き合わせています。 今回の #31 は Tibo Sottiaux の回です。OpenAI Codex を作ったエンジニアの一人で、いまは Codex を含む Core Products &amp; Platform 組織を率いています。The Pragmatic Engineer の 2</p>
+        <div class="tags-row"><span class="tag-badge">#Zenn (AI Topic)</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('19aaab5810b8214e220113ebd496a26e')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://zenn.dev/talks_tldr_jp/articles/tldr31-sottiaux-prediction" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('19aaab5810b8214e220113ebd496a26e')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-3c75c78a9f693fd7faab7b1fd4e065fb" data-id="3c75c78a9f693fd7faab7b1fd4e065fb">
+        <div class="meta-row">
+          <span class="source-tag">Zenn (AI Topic)</span>
+          <span>09/14 21:14</span>
+        </div>
+        <h2 class="card-title">常駐型AIチャットエージェントに送られる「添付ファイル」を安全に扱う設計</h2>
+        <p class="card-summary">Slack / Teams / Chatworkに常駐するAIエージェントは、テキストの指示だけでなく、スクリーンショット・PDFの見積書・Excelの一覧表といった添付ファイルを日常的に受け取ります。テキスト入力に対するプロンプトインジェクション対策(外部コンテンツに紛れた偽の指示への対処)は語られる機会が増えましたが、添付ファイルという「バイナリの入力経路」を安全に扱うための設計は見落とされがちです。この記事では、常駐エージェントが受け取る添付ファイルをどう処理すべきかを整理します。関連して</p>
+        <div class="tags-row"><span class="tag-badge">#Zenn (AI Topic)</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('3c75c78a9f693fd7faab7b1fd4e065fb')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://zenn.dev/hach/articles/chat-agent-attachment-handling-design" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('3c75c78a9f693fd7faab7b1fd4e065fb')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-348237a691be5404879f7a302f7f4eb4" data-id="348237a691be5404879f7a302f7f4eb4">
+        <div class="meta-row">
+          <span class="source-tag">Zenn (AI Topic)</span>
+          <span>09/14 21:07</span>
+        </div>
+        <h2 class="card-title">値上げ交渉ロールプレイ、背景設定は「手強い相手」を入れ替えるだけだった</h2>
+        <p class="card-summary">TL;DR 1つのチャットに「持ち帰る」「条件を付ける」「他社と比較する」の3交渉相手を立て、値上げを伝える側として実際に返答セリフを送り、反応の変化を見る多役ロールプレイを検証した 各相手役に「守るもの（1行）」を足した詳細版と、名前と役割ラベルだけの簡易版を、同じ交渉内容・同じ返答セリフで並行実行した 09-09の会議参加者ロールプレイ検証では「背景設定を足しても粘り強さの総量は変わらない」ことを確認済みだったが、今回は総量が変わらないだけでなく、&quot;どの相手が最も手強いか&quot;という順位そのもの</p>
+        <div class="tags-row"><span class="tag-badge">#Zenn (AI Topic)</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('348237a691be5404879f7a302f7f4eb4')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://zenn.dev/every_ai_recipe/articles/ai-price-negotiation-roleplay-practice" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('348237a691be5404879f7a302f7f4eb4')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-4748cf6ffa0029771ae3e25023389eab" data-id="4748cf6ffa0029771ae3e25023389eab">
+        <div class="meta-row">
+          <span class="source-tag">Zenn (AI Topic)</span>
+          <span>09/14 19:14</span>
+        </div>
+        <h2 class="card-title">Shopifyの「スプリットブレイン」はファイル名の争いではない。ドリフトであり、標準ファイルを一つ決めても終わらない</h2>
+        <p class="card-summary">2026年8月25日、Shopify CEOのTobi Lütke氏は「AGENTS.mdと.agents/skillsを読むようになるまで、ShopifyでClaude Codeを禁止することを考えている」と投稿した。理由は好みではなく、運用上の故障モードだ。「CLAUDE.mdしか読まないことに固執すると、チームメンバーが別々のツールを使っている場合にスプリットブレイン問題が起きることがある」(出典) その後の報道で明らかになった仕組みは、書き出しておく価値がある。数千人の開発者が触るモノレ</p>
+        <div class="tags-row"><span class="tag-badge">#Zenn (AI Topic)</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('4748cf6ffa0029771ae3e25023389eab')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://zenn.dev/untactit/articles/35da6c8c6aec59" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('4748cf6ffa0029771ae3e25023389eab')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-5f3d1998998a8696438a87ff67207b56" data-id="5f3d1998998a8696438a87ff67207b56">
+        <div class="meta-row">
+          <span class="source-tag">Hacker News (AI Top)</span>
+          <span>09/14 18:03</span>
+        </div>
+        <h2 class="card-title">Backprop Alternative: Augmented Lagrangian Predictive Coding</h2>
+        <p class="card-summary">https://arxiv.org/abs/2605.31022 https://github.com/SakanaAI/pc-alm Comments URL: https://news.ycombinator.com/item?id=49701182 Points: 57 # Comments: 13</p>
+        <div class="tags-row"><span class="tag-badge">#Hacker News (AI Top)</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('5f3d1998998a8696438a87ff67207b56')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://pub.sakana.ai/pc-alm/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('5f3d1998998a8696438a87ff67207b56')">元記事を読む →</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="category-section" id="section-research">
+      <div class="category-header">
+        <span class="category-title">論文・先端研究</span>
+        <span class="category-count">6件</span>
+      </div>
+
+      <article class="article-card" id="card-5c8d60dccac5f80d0e9e04c6339e1354" data-id="5c8d60dccac5f80d0e9e04c6339e1354">
+        <div class="meta-row">
+          <span class="source-tag">arXiv cs.AI</span>
+          <span>09/15 04:00</span>
+        </div>
+        <h2 class="card-title">TimeThink: Eliciting Compositional Reasoning in Timeseries Large Language Models</h2>
+        <p class="card-summary">arXiv:2609.13457v1 Announce Type: new Abstract: Timeseries multimodal large language models (TS-MLLMs) have recently begun leveraging the reasoning capabilities of large language models (LLMs) for question-answering tasks. However, these models often</p>
+        <div class="tags-row"><span class="tag-badge">#arXiv cs.AI</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('5c8d60dccac5f80d0e9e04c6339e1354')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://arxiv.org/abs/2609.13457" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('5c8d60dccac5f80d0e9e04c6339e1354')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-676946d69ba0846d17c8bf197973f50e" data-id="676946d69ba0846d17c8bf197973f50e">
+        <div class="meta-row">
+          <span class="source-tag">arXiv cs.AI</span>
+          <span>09/15 04:00</span>
+        </div>
+        <h2 class="card-title">Root-Cause Attribution Is a Search Problem: Continual Search for Long-Horizon Agent Failures</h2>
+        <p class="card-summary">arXiv:2609.13463v1 Announce Type: new Abstract: The increasing deployment of AI agents in long-horizon tasks yields massive execution logs. Diagnosing failures within these records is crucial for reliability, as it transforms outcome-level signals in</p>
+        <div class="tags-row"><span class="tag-badge">#arXiv cs.AI</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('676946d69ba0846d17c8bf197973f50e')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://arxiv.org/abs/2609.13463" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('676946d69ba0846d17c8bf197973f50e')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-ea9113a5e9f054330fee1bc53dc01868" data-id="ea9113a5e9f054330fee1bc53dc01868">
+        <div class="meta-row">
+          <span class="source-tag">arXiv cs.AI</span>
+          <span>09/15 04:00</span>
+        </div>
+        <h2 class="card-title">Governing at Machine Speed: An Adaptive Intelligence Architecture for Real-Time AI Policy Enforcement</h2>
+        <p class="card-summary">arXiv:2609.13466v1 Announce Type: new Abstract: Enterprise AI adoption has reached 78% of organizations globally, yet the infrastructure to govern that adoption has not kept pace. This paper identifies and characterizes the attestation deficit, a str</p>
+        <div class="tags-row"><span class="tag-badge">#arXiv cs.AI</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('ea9113a5e9f054330fee1bc53dc01868')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://arxiv.org/abs/2609.13466" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('ea9113a5e9f054330fee1bc53dc01868')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-625d25523b411fedb53e9712a1e1cbb8" data-id="625d25523b411fedb53e9712a1e1cbb8">
+        <div class="meta-row">
+          <span class="source-tag">arXiv cs.AI</span>
+          <span>09/15 04:00</span>
+        </div>
+        <h2 class="card-title">OrchSLM: Probing the Dynamics of Small Language Model Orchestration</h2>
+        <p class="card-summary">arXiv:2609.13470v1 Announce Type: new Abstract: Although large language models (LLMs) have demonstrated remarkable capabilities, their reliance on cloud-scale infrastructure poses fundamental challenges for deployment in agentic pipelines, including </p>
+        <div class="tags-row"><span class="tag-badge">#arXiv cs.AI</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('625d25523b411fedb53e9712a1e1cbb8')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://arxiv.org/abs/2609.13470" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('625d25523b411fedb53e9712a1e1cbb8')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-1b1448c26c6340f921826d9f2bd90198" data-id="1b1448c26c6340f921826d9f2bd90198">
+        <div class="meta-row">
+          <span class="source-tag">arXiv cs.AI</span>
+          <span>09/15 04:00</span>
+        </div>
+        <h2 class="card-title">Grounded Adjudication of Variations across Extracted TimeLines (GAVEL): Comparing Clinical Timelines Against Their Case Reports</h2>
+        <p class="card-summary">arXiv:2609.13475v1 Announce Type: new Abstract: Existing pipelines for clinical timeline extraction from case reports are evaluated using an expert reference and are limited by imperfect reference annotations and imprecise event alignment. We develop</p>
+        <div class="tags-row"><span class="tag-badge">#arXiv cs.AI</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('1b1448c26c6340f921826d9f2bd90198')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://arxiv.org/abs/2609.13475" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('1b1448c26c6340f921826d9f2bd90198')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card" id="card-246ba209f9e421461b4fc714fbb42bdd" data-id="246ba209f9e421461b4fc714fbb42bdd">
+        <div class="meta-row">
+          <span class="source-tag">arXiv cs.AI</span>
+          <span>09/15 04:00</span>
+        </div>
+        <h2 class="card-title">Token Efficient Task Execution via Application Behavior Modeling for Web Agents</h2>
+        <p class="card-summary">arXiv:2609.13491v1 Announce Type: new Abstract: The strong performance of AI Agents across an impressive variety of tasks is driving an unprecedented investment in agentic infrastructures, however the cost of processing tokens is fast increasing. Web</p>
+        <div class="tags-row"><span class="tag-badge">#arXiv cs.AI</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('246ba209f9e421461b4fc714fbb42bdd')">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://arxiv.org/abs/2609.13491" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('246ba209f9e421461b4fc714fbb42bdd')">元記事を読む →</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>AI Daily - 朝のスキマ時間で追いつく最新AIニュースまとめ</p>
+    <p style="margin-top: 4px; opacity: 0.8;">Serverless & Powered by GitHub Actions & Gemini API</p>
+  </footer>
+
+  <script>
+    // PWA Service Worker 登録
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(err => {
+          console.log('SW registration failed:', err);
+        });
+      });
+    }
+
+    // 既読管理 (localStorage)
+    const STORAGE_KEY = 'ai_daily_read_ids';
+    function getReadIds() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      } catch (e) {
+        return [];
+      }
+    }
+    function saveReadIds(ids) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
+    }
+
+    function applyReadState() {
+      const readIds = new Set(getReadIds());
+      document.querySelectorAll('.article-card').forEach(card => {
+        const id = card.getAttribute('data-id');
+        const isRead = readIds.has(id);
+        if (isRead) {
+          card.classList.add('is-read');
+          const btnText = card.querySelector('.read-text');
+          if (btnText) btnText.textContent = '既読解除';
+        } else {
+          card.classList.remove('is-read');
+          const btnText = card.querySelector('.read-text');
+          if (btnText) btnText.textContent = '既読にする';
+        }
+      });
+    }
+
+    function toggleRead(id) {
+      let readIds = getReadIds();
+      if (readIds.includes(id)) {
+        readIds = readIds.filter(x => x !== id);
+      } else {
+        readIds.push(id);
+      }
+      saveReadIds(readIds);
+      applyReadState();
+    }
+
+    function markRead(id) {
+      let readIds = getReadIds();
+      if (!readIds.includes(id)) {
+        readIds.push(id);
+        saveReadIds(readIds);
+        applyReadState();
+      }
+    }
+
+    document.getElementById('markAllBtn').addEventListener('click', () => {
+      const allCards = document.querySelectorAll('.article-card');
+      const allIds = Array.from(allCards).map(c => c.getAttribute('data-id'));
+      saveReadIds(allIds);
+      applyReadState();
+    });
+
+    // タブ切り替え
+    function switchTab(event, targetCat) {
+      event.preventDefault();
+      document.querySelectorAll('.tab-item').forEach(el => el.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      const sections = document.querySelectorAll('.category-section');
+      if (targetCat === 'all') {
+        sections.forEach(sec => sec.style.display = 'block');
+      } else {
+        sections.forEach(sec => {
+          if (sec.id === 'section-' + targetCat) {
+            sec.style.display = 'block';
+          } else {
+            sec.style.display = 'none';
+          }
+        });
+      }
+    }
+
+    // 初期化
+    applyReadState();
+  </script>
+</body>
+</html>

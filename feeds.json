@@ -1,0 +1,83 @@
+{
+  "categories": [
+    {
+      "id": "company",
+      "name": "企業・公式発表",
+      "feeds": [
+        {
+          "name": "OpenAI Blog",
+          "url": "https://openai.com/news/rss.xml",
+          "filter": []
+        },
+        {
+          "name": "Google AI Blog",
+          "url": "https://blog.research.google/feeds/posts/default?alt=rss",
+          "filter": []
+        },
+        {
+          "name": "Anthropic News",
+          "url": "https://news.google.com/rss/search?q=Anthropic+AI&hl=en-US&gl=US&ceid=US:en",
+          "filter": []
+        },
+        {
+          "name": "Microsoft Research",
+          "url": "https://www.microsoft.com/en-us/research/feed/",
+          "filter": ["ai", "gpt", "model", "intelligence", "copilot"]
+        }
+      ]
+    },
+    {
+      "id": "japan",
+      "name": "国内ニュース",
+      "feeds": [
+        {
+          "name": "ITmedia AI+",
+          "url": "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml",
+          "filter": []
+        },
+        {
+          "name": "GIZMODO Japan",
+          "url": "https://www.gizmodo.jp/index.xml",
+          "filter": ["ai", "人工知能", "chatgpt", "gemini", "claude", "llm"]
+        },
+        {
+          "name": "PIVOT (AI・ビジネス速報)",
+          "url": "https://news.google.com/rss/search?q=%22PIVOT%22+(AI+OR+%E4%BA%BA%E5%B7%A5%E7%9F%A5%E8%83%BD+OR+%E7%94%9F%E6%88%90AI+OR+ChatGPT+OR+LLM)&hl=ja&gl=JP&ceid=JP:ja",
+          "filter": []
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "name": "開発者・トレンド",
+      "feeds": [
+        {
+          "name": "Hacker News (AI Top)",
+          "url": "https://hnrss.org/frontpage",
+          "filter": ["ai", "llm", "gpt", "gemini", "claude", "agent", "deepseek"]
+        },
+        {
+          "name": "Zenn (AI Topic)",
+          "url": "https://zenn.dev/topics/ai/feed",
+          "filter": []
+        }
+      ]
+    },
+    {
+      "id": "research",
+      "name": "論文・先端研究",
+      "feeds": [
+        {
+          "name": "arXiv cs.AI",
+          "url": "https://rss.arxiv.org/rss/cs.AI",
+          "filter": []
+        },
+        {
+          "name": "MIT News (AI)",
+          "url": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+          "filter": []
+        }
+      ]
+    }
+  ]
+}
