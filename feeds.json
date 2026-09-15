@@ -15,14 +15,20 @@
           "filter": []
         },
         {
-          "name": "Anthropic News",
-          "url": "https://news.google.com/rss/search?q=Anthropic+AI&hl=en-US&gl=US&ceid=US:en",
-          "filter": []
-        },
-        {
           "name": "Microsoft Research",
           "url": "https://www.microsoft.com/en-us/research/feed/",
           "filter": ["ai", "gpt", "model", "intelligence", "copilot"]
+        }
+      ]
+    },
+    {
+      "id": "global",
+      "name": "海外ニュース",
+      "feeds": [
+        {
+          "name": "Anthropic関連（海外メディア）",
+          "url": "https://news.google.com/rss/search?q=Anthropic+AI&hl=en-US&gl=US&ceid=US:en",
+          "filter": []
         }
       ]
     },

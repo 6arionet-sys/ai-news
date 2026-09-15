@@ -1,11 +1,11 @@
 {
-  "name": "AI Daily ニュース",
-  "short_name": "AI Daily",
+  "name": "最新AI系ニュースまとめ",
+  "short_name": "最新AI系ニュースまとめ",
   "description": "毎朝更新される最新AIニュースの要約まとめ",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
+  "background_color": "#0b0f19",
+  "theme_color": "#0b0f19",
   "icons": [
     {
       "src": "icon-192.png",
