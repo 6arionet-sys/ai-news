@@ -769,6 +769,80 @@ def generate_html(categories, articles, output_path="docs/index.html"):
       margin-bottom: 6px;
     }}
 
+    /* ロック認証オーバーレイ */
+    #authOverlay {{
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #0b0f19;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }}
+    .auth-card {{
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 32px 24px;
+      max-width: 360px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }}
+    .auth-icon {{
+      font-size: 42px;
+      margin-bottom: 12px;
+    }}
+    .auth-title {{
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }}
+    .auth-desc {{
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }}
+    .auth-input {{
+      width: 100%;
+      padding: 12px 16px;
+      background: #0b0f19;
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      color: #fff;
+      font-size: 15px;
+      text-align: center;
+      margin-bottom: 12px;
+      outline: none;
+      box-sizing: border-box;
+    }}
+    .auth-input:focus {{
+      border-color: var(--accent);
+    }}
+    .auth-submit-btn {{
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }}
+    .auth-submit-btn:active {{
+      opacity: 0.85;
+    }}
+    .auth-error {{
+      color: #f87171;
+      font-size: 12px;
+      margin-top: 10px;
+      display: none;
+    }}
+
     /* フッター */
     footer {{
       text-align: center;
@@ -780,6 +854,18 @@ def generate_html(categories, articles, output_path="docs/index.html"):
   </style>
 </head>
 <body>
+
+  <!-- パスコードロックオーバーレイ -->
+  <div id="authOverlay" style="display: none;">
+    <div class="auth-card">
+      <div class="auth-icon">🔒</div>
+      <div class="auth-title">Private Access</div>
+      <div class="auth-desc">このサイトはプライベート設定されています。<br>合言葉を入力してください。</div>
+      <input type="password" id="authPassInput" class="auth-input" placeholder="合言葉を入力" autocomplete="current-password" onkeydown="if(event.key==='Enter') submitAuth()">
+      <button class="auth-submit-btn" onclick="submitAuth()">認証して開く</button>
+      <div class="auth-error" id="authError">合言葉が違います</div>
+    </div>
+  </div>
 
   <header>
     <div class="header-top">
@@ -1064,8 +1150,59 @@ def generate_html(categories, articles, output_path="docs/index.html"):
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    // 閲覧制限・合言葉認証 (Arione)
+    const AUTH_HASH = 'ea218a079b77f3b95ebe0b939f96089afe3b8cbc3d5d8c76f663d5a7478d5f5e';
+    const AUTH_STORAGE_KEY = 'ai_daily_auth_key';
+
+    async function hashPasscode(str) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    async function checkAuthOnLoad() {
+      // URLパラメータのチェック (?pass=Arione)
+      const params = new URLSearchParams(window.location.search);
+      const urlPass = params.get('pass');
+      if (urlPass) {
+        const h = await hashPasscode(urlPass);
+        if (h === AUTH_HASH) {
+          localStorage.setItem(AUTH_STORAGE_KEY, AUTH_HASH);
+          const cleanUrl = window.location.origin + window.location.pathname;
+          window.history.replaceState({}, document.title, cleanUrl);
+        }
+      }
+
+      const stored = localStorage.getItem(AUTH_STORAGE_KEY);
+      if (stored === AUTH_HASH) {
+        document.getElementById('authOverlay').style.display = 'none';
+        document.querySelector('header').style.display = 'block';
+        document.getElementById('tabsWrap').style.display = 'flex';
+        document.getElementById('mainContent').style.display = 'block';
+        document.querySelector('footer').style.display = 'block';
+        updateUI();
+      } else {
+        document.getElementById('authOverlay').style.display = 'flex';
+        document.querySelector('header').style.display = 'none';
+        document.getElementById('tabsWrap').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'none';
+        document.querySelector('footer').style.display = 'none';
+      }
+    }
+
+    async function submitAuth() {
+      const input = document.getElementById('authPassInput').value.trim();
+      const h = await hashPasscode(input);
+      const err = document.getElementById('authError');
+      if (h === AUTH_HASH) {
+        localStorage.setItem(AUTH_STORAGE_KEY, AUTH_HASH);
+        checkAuthOnLoad();
+      } else {
+        err.style.display = 'block';
+      }
+    }
+
     // 初期化
-    updateUI();
+    checkAuthOnLoad();
   </script>
 </body>
 </html>
