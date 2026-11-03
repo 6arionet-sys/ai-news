@@ -450,7 +450,7 @@
         <div class="logo-badge">AI</div>
         <div>
           <h1>最新AI系ニュースまとめ</h1>
-          <div class="updated-text">更新: 2026/11/02 08:42 (全19件)</div>
+          <div class="updated-text">更新: 2026/11/03 11:29 (全28件)</div>
         </div>
       </div>
       <div class="header-actions">
@@ -467,7 +467,12 @@
     </a>
     <a href="#unread" class="tab-item active" onclick="switchTab(event, 'unread')">
       <span>未読</span>
-      <span class="tab-badge" id="badge-unread">19</span>
+      <span class="tab-badge" id="badge-unread">28</span>
+    </a>
+    <a href="#site-GIZMODO_Japan" class="tab-item" onclick="switchTab(event, 'site-GIZMODO_Japan')">
+      <span>GIZMODO Japan</span>
+      <span class="cat-label">[国内]</span>
+      <span class="tab-badge">4</span>
     </a>
     <a href="#site-Anthropic__________" class="tab-item" onclick="switchTab(event, 'site-Anthropic__________')">
       <span>Anthropic関連（海外メディア）</span>
@@ -482,17 +487,27 @@
     <a href="#site-ITmedia_AI_" class="tab-item" onclick="switchTab(event, 'site-ITmedia_AI_')">
       <span>ITmedia AI+</span>
       <span class="cat-label">[国内]</span>
-      <span class="tab-badge">4</span>
+      <span class="tab-badge">3</span>
+    </a>
+    <a href="#site-MIT_News__AI_" class="tab-item" onclick="switchTab(event, 'site-MIT_News__AI_')">
+      <span>MIT News (AI)</span>
+      <span class="cat-label">[論文]</span>
+      <span class="tab-badge">2</span>
+    </a>
+    <a href="#site-OpenAI_Blog" class="tab-item" onclick="switchTab(event, 'site-OpenAI_Blog')">
+      <span>OpenAI Blog</span>
+      <span class="cat-label">[企業]</span>
+      <span class="tab-badge">3</span>
     </a>
     <a href="#site-Zenn__AI_Topic_" class="tab-item" onclick="switchTab(event, 'site-Zenn__AI_Topic_')">
       <span>Zenn (AI Topic)</span>
       <span class="cat-label">[開発]</span>
       <span class="tab-badge">4</span>
     </a>
-    <a href="#site-GIZMODO_Japan" class="tab-item" onclick="switchTab(event, 'site-GIZMODO_Japan')">
-      <span>GIZMODO Japan</span>
-      <span class="cat-label">[国内]</span>
-      <span class="tab-badge">3</span>
+    <a href="#site-arXiv_cs_AI" class="tab-item" onclick="switchTab(event, 'site-arXiv_cs_AI')">
+      <span>arXiv cs.AI</span>
+      <span class="cat-label">[論文]</span>
+      <span class="tab-badge">4</span>
     </a>
     <a href="#read" class="tab-item" onclick="switchTab(event, 'read')">
       <span>既読</span>
@@ -508,421 +523,619 @@
 
     <div id="articlesList">
 
-      <article class="article-card featured-pick" id="card-c23bab8036fdc00d5910896c534915b1" data-id="c23bab8036fdc00d5910896c534915b1" data-source="site-Anthropic__________" data-score="4" data-featured="true">
+      <article class="article-card featured-pick" id="card-ea76235bfa61b1bcbca3ed07f8835fec" data-id="ea76235bfa61b1bcbca3ed07f8835fec" data-source="site-GIZMODO_Japan" data-score="4" data-featured="true">
         <div class="meta-row">
           <div class="source-group">
-            <span class="category-tag">海外</span>
-            <span class="source-tag">Anthropic関連（海外メディア）</span>
-            <span>11/01 22:55</span>
+            <span class="category-tag">国内</span>
+            <span class="source-tag">GIZMODO Japan</span>
+            <span>11/03 02:00</span>
           </div>
           <div class="stars-badge" title="注目度 4/5">
             <span>★★★★☆</span>
           </div>
         </div>
-        <h2 class="card-title">Anthropic の IPO が迫る: それは市場にとって幸か不幸か? - 조선일보</h2>
-        <p class="card-summary">Anthropic の IPO が迫る: それは市場にとって幸か不幸か? 조선일보</p>
+        <h2 class="card-title">これが読めたら天才。Claudeが画像に隠したメッセージ</h2>
+        <p class="card-summary">AnthropicのAIが画像に埋め込んだ隠しメッセージの解読実験を紹介。AI間の暗号通信がもたらすセキュリティの未来を解説します。</p>
+        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#GIZMODO</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('ea76235bfa61b1bcbca3ed07f8835fec', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.gizmodo.jp/article/2611-claude-hidden-message-image-steganography/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('ea76235bfa61b1bcbca3ed07f8835fec')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-08937a8f5391ee4250b0e3ad85c1b077" data-id="08937a8f5391ee4250b0e3ad85c1b077" data-source="site-Anthropic__________" data-score="4" data-featured="true">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">海外</span>
+            <span class="source-tag">Anthropic関連（海外メディア）</span>
+            <span>11/03 01:50</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">AI と技術に関する概要: なぜ Anthropic は AI の混乱を静めないのか - ワシントン・ポスト</h2>
+        <p class="card-summary">AI と技術に関する概要: なぜ Anthropic は AI の混乱を静めないのか The Washington Post</p>
         <div class="tags-row"><span class="tag-badge">#海外</span><span class="tag-badge">#Anthropic関連（海外メディア）</span></div>
         <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('c23bab8036fdc00d5910896c534915b1', event)">
+          <button class="read-toggle-btn" onclick="toggleRead('08937a8f5391ee4250b0e3ad85c1b077', event)">
             <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
           </button>
-          <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxQZ0pidzE5QlRmNXhRbnhKMXVWSEF1NUhoZlhpYXo3azJBc2dMcThNajFOWlo0clB6aFFnWXZuN3pjWU1HeDl0Z05oZXF4Mi01NlZOdVBJbHJfajljMjczYjV1eXBhSWY1ejI1VGViVVd0aHVSMml1OGhfcmgzcmp5Q2R5VXZhcmFFblNDc1ln?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('c23bab8036fdc00d5910896c534915b1')">元記事を読む →</a>
+          <a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxQeWZuTU5Lb2xUdXFEVlFBS0h3THBwV1ZieEdKMTlUal9TYVNoVzlaOWE2ZkxqV2dZYUNuTGdNVjM4dzlHSmtGY3l2YVkxeXNUMmVubzF4RTItNnVTT245d1BnYi04UHpyOXFWWDNyRXJzbjhTTWFOYW9hc3JLUzFVNV9TcHZsS2ducjJHeHl2dGE5dlVtZjlUMnpSbEw1c3g5TWtobUo2dEctOFhaNExZbkNKQU5uS19lajM3bXUzb2hETHBVeVhpWm4ybVdTZw?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('08937a8f5391ee4250b0e3ad85c1b077')">元記事を読む →</a>
         </div>
       </article>
 
-      <article class="article-card featured-pick" id="card-71c43854f4ff116510cbaf1cf0b73734" data-id="71c43854f4ff116510cbaf1cf0b73734" data-source="site-Hacker_News__AI_Top_" data-score="3" data-featured="true">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">開発</span>
-            <span class="source-tag">Hacker News (AI Top)</span>
-            <span>11/01 22:10</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">AIはほとんどの企業に「金銭的利益はゼロ」だとアポロの経済学者が語る</h2>
-        <p class="card-summary">記事URL: https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/ コメントURL: https://news.ycombinator.com/item?id=50330456 ポイント: 46 # コメント: 19</p>
-        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Hacker</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('71c43854f4ff116510cbaf1cf0b73734', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('71c43854f4ff116510cbaf1cf0b73734')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card featured-pick" id="card-b0cc3528c3b31b8667da5c1445496618" data-id="b0cc3528c3b31b8667da5c1445496618" data-source="site-ITmedia_AI_" data-score="4" data-featured="true">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">国内</span>
-            <span class="source-tag">ITmedia AI+</span>
-            <span>11/01 22:00</span>
-          </div>
-          <div class="stars-badge" title="注目度 4/5">
-            <span>★★★★☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">Anthropic、「Claude」の「Max 20x」を「Ultra」に名称変更 月200ドルで5時間ごとの利用制限を撤廃</h2>
-        <p class="card-summary">Anthropicは、「Claude」の個人向け有料プランの名称を変更し、月額100ドルの「Max 5x」を「Max」に、月額200ドルの「Max 20x」を「Ultra」にした。料金は据え置き。Ultraでは確認済みアカウントを対象に、5時間ごとの利用制限を撤廃した。週ごとの制限は変わらない。</p>
-        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#ITmedia</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('b0cc3528c3b31b8667da5c1445496618', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://www.itmedia.co.jp/news/article/2611/02/2000002777/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('b0cc3528c3b31b8667da5c1445496618')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card featured-pick" id="card-9344e570a2afab6260d6cfd593576143" data-id="9344e570a2afab6260d6cfd593576143" data-source="site-ITmedia_AI_" data-score="3" data-featured="true">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">国内</span>
-            <span class="source-tag">ITmedia AI+</span>
-            <span>11/01 22:00</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">「保安検査の長い列」と「人手不足」をどう解消する？ フランクフルト空港におけるAI時代の空港DX</h2>
-        <p class="card-summary">4月に開業したフランクフルト空港の第3ターミナル。IT技術やAIを導入し、顧客体験の向上や業務効率化を行っている。どのような技術を導入し、「止まらない空港」を実現しようとしているのか？</p>
-        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#ITmedia</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('9344e570a2afab6260d6cfd593576143', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://www.itmedia.co.jp/business/articles/2611/02/news003.html" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('9344e570a2afab6260d6cfd593576143')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card featured-pick" id="card-8e463bc5bf0d989246c8fb9878d140f7" data-id="8e463bc5bf0d989246c8fb9878d140f7" data-source="site-ITmedia_AI_" data-score="3" data-featured="true">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">国内</span>
-            <span class="source-tag">ITmedia AI+</span>
-            <span>11/01 22:00</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">キオクシア「設備投資を急がねば……」 2027年分は完売、メモリ供給追い付くか</h2>
-        <p class="card-summary">半導体メモリ大手のキオクシアは、2027年の生産能力が全て“完売”だと明かした。AIブームによる旺盛なメモリ需要に答えるため、年5000億円弱を投じて新工場を建設する。</p>
-        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#ITmedia</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('8e463bc5bf0d989246c8fb9878d140f7', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://www.itmedia.co.jp/business/articles/2611/02/news031.html" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('8e463bc5bf0d989246c8fb9878d140f7')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card featured-pick" id="card-5bc4b987419a8dbb14e83652c83cc08b" data-id="5bc4b987419a8dbb14e83652c83cc08b" data-source="site-ITmedia_AI_" data-score="3" data-featured="true">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">国内</span>
-            <span class="source-tag">ITmedia AI+</span>
-            <span>11/01 22:00</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">その日、メルカリは「業務を止めた」――上司と部下が対立も、AI利用率100％をかなえたCAIOの奮闘記</h2>
-        <p class="card-summary">AIツールの利用率100％を達成したメルカリ。しかし「AIエージェント構築に時間を割きたい部下と、それを止めたい上司」など一筋縄ではいかなかった。試行錯誤の裏側をCAIOが語る。</p>
-        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#ITmedia</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('5bc4b987419a8dbb14e83652c83cc08b', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://www.itmedia.co.jp/business/articles/2611/02/news032.html" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('5bc4b987419a8dbb14e83652c83cc08b')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card " id="card-5523c15f1661ec4bb216a6d8768a66d3" data-id="5523c15f1661ec4bb216a6d8768a66d3" data-source="site-Zenn__AI_Topic_" data-score="3" data-featured="false">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">開発</span>
-            <span class="source-tag">Zenn (AI Topic)</span>
-            <span>11/01 21:40</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">Tech Watch 2026-11-02: 実行境界と信頼の証明</h2>
-        <p class="card-summary">AIが書きました🤖 この記事は、AIが書いたものをAIがレビューしてから公開しています。 L: 対話画面の中に小さなアプリを表示するとき、見た目にはただの便利な部品に見える。でも、その部品が親画面にメッセージを送れるなら、隔離の境界は受信側で決まるのではないか。私は、表示面を閉じ込めるだけでは親画面の権限を守れないと思う。実際にはどこで権限が変わったの？ 今日の 2 件 How We Took Over ChatGPT Accounts Simon Willison の記事は、ChatGPT の HTML プレビューから親画面へ届くメッセージを悪用した侵入経路を解説する。別の...</p>
-        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('5523c15f1661ec4bb216a6d8768a66d3', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://zenn.dev/laiken/articles/20261102-tech-watch" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('5523c15f1661ec4bb216a6d8768a66d3')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card featured-pick" id="card-06eb1957c78a21378baa7ec6fb5edf07" data-id="06eb1957c78a21378baa7ec6fb5edf07" data-source="site-Anthropic__________" data-score="5" data-featured="true">
+      <article class="article-card featured-pick" id="card-7f629047de897eb600e3278355493279" data-id="7f629047de897eb600e3278355493279" data-source="site-Anthropic__________" data-score="5" data-featured="true">
         <div class="meta-row">
           <div class="source-group">
             <span class="category-tag">海外</span>
             <span class="source-tag">Anthropic関連（海外メディア）</span>
-            <span>11/01 21:08</span>
+            <span>11/03 01:34</span>
           </div>
           <div class="stars-badge" title="注目度 5/5">
             <span>★★★★★</span>
           </div>
         </div>
-        <h2 class="card-title">既存のビデオゲームの再作成を阻止するためにクロードが人為的なアップデートを行う - Engadget</h2>
-        <p class="card-summary">既存のビデオゲームの再作成を阻止するためにクロードが人為的なアップデートを行う Engadget</p>
+        <h2 class="card-title">Anthropic、クロードが薬を作れることを証明するためにワンパーソンバイオテクノロジーを買収 - PYMNTS.com</h2>
+        <p class="card-summary">Anthropic、クロードが薬を作れることを証明するためにワンパーソン・バイオテクノロジーを買収 PYMNTS.com</p>
         <div class="tags-row"><span class="tag-badge">#海外</span><span class="tag-badge">#Anthropic関連（海外メディア）</span></div>
         <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('06eb1957c78a21378baa7ec6fb5edf07', event)">
+          <button class="read-toggle-btn" onclick="toggleRead('7f629047de897eb600e3278355493279', event)">
             <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
           </button>
-          <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxPRWdaMk1uTzMzRnFaWXdrRVVBTWZHNGp0WDAxR010U0pxM0owYjNzeWd2dHRlLWdEOWZRRjh6YWhkWEtpYjg5cWt6SXBqSGtrU0VhUi1uZzY2eXZqVkpmT04wZXhjWHRBS1NDZDJhbTBrVTJLREoyREhfZXIycjhyUVNmOURIMmMxaXhSSXIyOWlwR0ctOW5oRzZjZEdTV3J0UW9CTUlhdW5UUQ?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('06eb1957c78a21378baa7ec6fb5edf07')">元記事を読む →</a>
+          <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxNN3dHUXY4YURtTE0tRmVnRF8xdFdpYnVOTDJSWWhCVU9FVkFqVXZsV3B1aUZQYWw1Q0ZqR0pwajFFMk1HT1ViYXBhVnBxSDZlb2twX0FSU05pdDY5MEJEWmotcnNEenpJTHJ2amc4QlVwMEtjbG95ZFhESzA5N2dMbHYyNkIzRHROUExMZFlpRlhTYnRYSmw4cDhaT0Z2eGlpYk9oQk5IdWFWSy0xR0EtLWpuZzd2ZVhFQW5sNkdNaw?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('7f629047de897eb600e3278355493279')">元記事を読む →</a>
         </div>
       </article>
 
-      <article class="article-card " id="card-d03406ba645e86fb420fa7be8023423f" data-id="d03406ba645e86fb420fa7be8023423f" data-source="site-Zenn__AI_Topic_" data-score="3" data-featured="false">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">開発</span>
-            <span class="source-tag">Zenn (AI Topic)</span>
-            <span>11/01 20:47</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">AI返信の下書きを人へ渡す前に、文脈の欠落を検出する最小設計</h2>
-        <p class="card-summary">問い合わせ返信の下書きをAIに作らせると、文章そのものは早くできます。一方で、担当者が確認するときに「この返信は何を根拠に書かれたのか」「まだ足りない情報は何か」が分からないと、確認作業が増えます。 この記事では、AIに送信を任せる方法ではなく、下書きを人間へ渡す前に文脈の欠落を見つけるための最小設計を扱います。Googleスプレッドシートや既存のCRMへ移植しやすいよう、項目・判定・レビュー境界を小さくまとめます。 対象読者と、この記事の完成状態 対象は、問い合わせ対応を少人数で行い、AIには返信の下書きまで任せたい管理者・担当者です。 この記事を読み終えた時点で、直近の問い合わ...</p>
-        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('d03406ba645e86fb420fa7be8023423f', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://zenn.dev/miraigent/articles/ai-reply-context-handoff" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('d03406ba645e86fb420fa7be8023423f')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card " id="card-0df1d9354ebb09c4e28c88585eb74133" data-id="0df1d9354ebb09c4e28c88585eb74133" data-source="site-Zenn__AI_Topic_" data-score="3" data-featured="false">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">開発</span>
-            <span class="source-tag">Zenn (AI Topic)</span>
-            <span>11/01 19:55</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">OpenAI、資金目標の半分未満か。AIの「お金」と「ルール」が動く</h2>
-        <p class="card-summary">2026年11月1日（日）のAIニュース完全解説版。図解を見れば本文を読まなくても分かる形にしています。 今日の話、僕がいちばん気になったのはAIのお金なんですよ。OpenAIの資金集めが、目標$30Bの半分未満だったと報じられました。他にも、Claudeが既存ゲームの再現を止め始めた話、Claude Codeの期限つき変更、AIの収集を断る新標準、宇宙で動いたGoogleのAIまで。足元の現実と、遠い未来の両方が見える5本です。 1. OpenAIの資金集め、目標の半分未満と報道 図解（完全解説版） 先に結論を言います。AIのお金の流れに、ちょっと変な音が混じり始めてるんです。...</p>
-        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('0df1d9354ebb09c4e28c88585eb74133', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://zenn.dev/sugawara_ai/articles/ai-news-20261101" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('0df1d9354ebb09c4e28c88585eb74133')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card " id="card-f3c544501a5538d56670161d20d0269f" data-id="f3c544501a5538d56670161d20d0269f" data-source="site-Zenn__AI_Topic_" data-score="3" data-featured="false">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">開発</span>
-            <span class="source-tag">Zenn (AI Topic)</span>
-            <span>11/01 19:38</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">20分で約63億ドルが流出——Binance事件から考える、AI時代のセキュリティ</h2>
-        <p class="card-summary">Keyroアカデミー｜AI最前線 2026年10月29日、暗号資産取引所Binanceのホットウォレットから、約63億6,000万ドル相当の暗号資産が流出しました。ブロックチェーン分析企業TRM Labsによると、流出の大部分は約20分間に集中しています。Binance自身も、同日20時05分（UTC）ごろにホットウォレットが侵害され、約63億ドル相当の損失が発生したと発表しました。 大きな数字だけを見ると「暗号技術が破られた」と思うかもしれません。しかし、現時点で公表されている情報が示すのは、ウォレットの秘密鍵が盗まれたと確認されたわけではなく、ホットウォレットを動かすインフラや認可の...</p>
-        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('f3c544501a5538d56670161d20d0269f', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://zenn.dev/keyro/articles/binance-hack-security-survival" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('f3c544501a5538d56670161d20d0269f')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card " id="card-157ac6393768f5f64a27370381b6f4d5" data-id="157ac6393768f5f64a27370381b6f4d5" data-source="site-Hacker_News__AI_Top_" data-score="3" data-featured="false">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">開発</span>
-            <span class="source-tag">Hacker News (AI Top)</span>
-            <span>11/01 19:35</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">HN に質問: プライバシーのためにどのテレビをお勧めしますか?</h2>
-        <p class="card-summary">私はもう何年もテレビを持っていないので、プライバシーを尊重してくれるテレビが欲しいと思っています。これをうまく機能するテレビはありますか? 60 インチから 80 インチの範囲のものを探しており、少なくとも 60hz のディスプレイを備えた 4k ディスプレイが欲しいと考えています。プレミアムを払っても構いません。 Apple TV については良いことを聞いています。</p>
-        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Hacker</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('157ac6393768f5f64a27370381b6f4d5', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://news.ycombinator.com/item?id=50328896" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('157ac6393768f5f64a27370381b6f4d5')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card featured-pick" id="card-ccad437d6662274bec5e98b8f465efe8" data-id="ccad437d6662274bec5e98b8f465efe8" data-source="site-Anthropic__________" data-score="4" data-featured="true">
+      <article class="article-card featured-pick" id="card-0d56661d2a9e59709abb241b410b1473" data-id="0d56661d2a9e59709abb241b410b1473" data-source="site-Anthropic__________" data-score="4" data-featured="true">
         <div class="meta-row">
           <div class="source-group">
             <span class="category-tag">海外</span>
             <span class="source-tag">Anthropic関連（海外メディア）</span>
-            <span>11/01 19:17</span>
+            <span>11/03 01:12</span>
           </div>
           <div class="stars-badge" title="注目度 4/5">
             <span>★★★★☆</span>
           </div>
         </div>
-        <h2 class="card-title">ハグ顔の「人為的リーク」には乱数テンソルがある - FourWeekMBA</h2>
-        <p class="card-summary">ハグ顔の「人為的リーク」には乱数テンソルがある FourWeekMBA</p>
+        <h2 class="card-title">第 3 四半期の研究開発費は人類が Palantir を 43 対 1 で上回りました - R&amp;D World</h2>
+        <p class="card-summary">第 3 四半期 R&amp;D World の研究開発費は、人類が Palantir を 43 対 1 で上回りました</p>
         <div class="tags-row"><span class="tag-badge">#海外</span><span class="tag-badge">#Anthropic関連（海外メディア）</span></div>
         <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('ccad437d6662274bec5e98b8f465efe8', event)">
+          <button class="read-toggle-btn" onclick="toggleRead('0d56661d2a9e59709abb241b410b1473', event)">
             <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
           </button>
-          <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxNQ2VWNzlBTFFFdTUwcjF5QTVrSnh1UklVbHZ4NDg1cjFSbVFlbkJmZ0ppYlAtSmVvNWl2M01KYWxQMEdBYTY5VmVaSFZZVjBOaEpnMDB4RGJ6OTVXakxQV2RUQ3Y2djRkcHVZOGdxaF9EejAtdFJibHJRdFRVeEVSb2RyUlV2YkkyOGpiMw?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('ccad437d6662274bec5e98b8f465efe8')">元記事を読む →</a>
+          <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxOT2E5cjFzNUhBQU9WcVJmYUhta0Q5ZGIwZU1YTUFlQmZxeGpPdnJqUnIwMTlqTjZKTnBrbWpJMFM5OWVSaU5uMmJBc0JXSmRYSDdKeWx3Z05PbGV1ZTY5b0g1eUw1NzFqbV94ZFd4bFlxQURKVGlnSFRlNWhOazJBT28tZzlQX05TV2I1cUdnVUhuQkRLenpoalBMeXpRX2lEVklrLVlBRms?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('0d56661d2a9e59709abb241b410b1473')">元記事を読む →</a>
         </div>
       </article>
 
-      <article class="article-card featured-pick" id="card-2448e3d650fbfdfc05e6558d94177db2" data-id="2448e3d650fbfdfc05e6558d94177db2" data-source="site-Anthropic__________" data-score="5" data-featured="true">
+      <article class="article-card featured-pick" id="card-4b9ba71bd29eec53d9963964d3303214" data-id="4b9ba71bd29eec53d9963964d3303214" data-source="site-Anthropic__________" data-score="5" data-featured="true">
         <div class="meta-row">
           <div class="source-group">
             <span class="category-tag">海外</span>
             <span class="source-tag">Anthropic関連（海外メディア）</span>
-            <span>11/01 17:42</span>
+            <span>11/03 01:04</span>
           </div>
           <div class="stars-badge" title="注目度 5/5">
             <span>★★★★★</span>
           </div>
         </div>
-        <h2 class="card-title">Anthropic サイト コードの Claude Mythos 5.5 を示すスクリーンショット - FourWeekMBA</h2>
-        <p class="card-summary">Anthropic Site Code FourWeekMBA の Claude Mythos 5.5 を示すスクリーンショット</p>
+        <h2 class="card-title">EPAM: エージェントが不正行為を行う中、安全な AI のために Anthropic と提携 (NYSE:EPAM) - アルファを求めて</h2>
+        <p class="card-summary">EPAM: エージェントが不正行為を行う中、安全な AI のために Anthropic と提携 (NYSE:EPAM) アルファを求める</p>
         <div class="tags-row"><span class="tag-badge">#海外</span><span class="tag-badge">#Anthropic関連（海外メディア）</span></div>
         <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('2448e3d650fbfdfc05e6558d94177db2', event)">
+          <button class="read-toggle-btn" onclick="toggleRead('4b9ba71bd29eec53d9963964d3303214', event)">
             <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
           </button>
-          <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxPM3JVT3lYbWdta1NBRk5CZDhlbFczWkM4d1JNSVZFekI4NmdNR29vdHI4YnNhOVBoRllIN0RmT3drcUVabUU2RVF2M0VPQy14LUt1LWNCa0NHTTBwN0hJZUEtSkpWdVJ1MVZVMjJqeFJqVXpCRGVIelpjWmt1TlpmdFoxcW80SUtLWkdpN0d3?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('2448e3d650fbfdfc05e6558d94177db2')">元記事を読む →</a>
+          <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxPWGlsQmJLODZWUnNvX2RZbF83ekM3dEtWcTVhUTRNNndFZmxBd2l0aVlrNkpQNFNNLU1MZGp1Q3l6UGtPekRvekdVU2pZVThSWGVQV1B0a0RxdWVvalZaR0RlWm5rWlhKMzRfdFNJV0F4MXpZbWh2NGZPR0dCQURST19jREFpelpXUEpYUV9XOTVuTVU5V2pwR29PcEw2QQ?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('4b9ba71bd29eec53d9963964d3303214')">元記事を読む →</a>
         </div>
       </article>
 
-      <article class="article-card " id="card-023b1a369ee570fb842720e3a884df67" data-id="023b1a369ee570fb842720e3a884df67" data-source="site-Hacker_News__AI_Top_" data-score="3" data-featured="false">
+      <article class="article-card " id="card-62c92db9e7dc1e5beabc58ab3aa9fb28" data-id="62c92db9e7dc1e5beabc58ab3aa9fb28" data-source="site-Hacker_News__AI_Top_" data-score="3" data-featured="false">
         <div class="meta-row">
           <div class="source-group">
             <span class="category-tag">開発</span>
             <span class="source-tag">Hacker News (AI Top)</span>
-            <span>11/01 16:46</span>
+            <span>11/02 23:30</span>
           </div>
           <div class="stars-badge" title="注目度 3/5">
             <span>★★★☆☆</span>
           </div>
         </div>
-        <h2 class="card-title">フロンティア航空が侵害された可能性</h2>
-        <p class="card-summary">記事URL: https://www.reddit.com/r/frontierairlines/comments/1xl20e8/psa_email_scam/ コメントURL: https://news.ycombinator.com/item?id=50327266 ポイント: 159 # コメント: 52</p>
+        <h2 class="card-title">WorkOSがセキュリティ侵害を報告</h2>
+        <p class="card-summary">まだ Web サイトやトラスト センターには掲載されていませんが、WorkOS から次の侵害通知を受け取りました。2026 年 10 月 30 日に検出されたデータ セキュリティ インシデントについてお知らせするために手紙を書き、調査を続けています。私たちはお客様の信頼を大切にしており、お客様に最新の情報を提供していきたいと考えています。</p>
         <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Hacker</span></div>
         <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('023b1a369ee570fb842720e3a884df67', event)">
+          <button class="read-toggle-btn" onclick="toggleRead('62c92db9e7dc1e5beabc58ab3aa9fb28', event)">
             <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
           </button>
-          <a href="https://www.reddit.com/r/frontierairlines/comments/1xl20e8/psa_email_scam/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('023b1a369ee570fb842720e3a884df67')">元記事を読む →</a>
+          <a href="https://news.ycombinator.com/item?id=50345712" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('62c92db9e7dc1e5beabc58ab3aa9fb28')">元記事を読む →</a>
         </div>
       </article>
 
-      <article class="article-card " id="card-b149e19cb64e87a61c93ee60f836b0bd" data-id="b149e19cb64e87a61c93ee60f836b0bd" data-source="site-Hacker_News__AI_Top_" data-score="3" data-featured="false">
+      <article class="article-card " id="card-e3cebe21c21c0f1469e233a6a38bd259" data-id="e3cebe21c21c0f1469e233a6a38bd259" data-source="site-ITmedia_AI_" data-score="3" data-featured="false">
         <div class="meta-row">
           <div class="source-group">
-            <span class="category-tag">開発</span>
-            <span class="source-tag">Hacker News (AI Top)</span>
-            <span>11/01 15:58</span>
+            <span class="category-tag">国内</span>
+            <span class="source-tag">ITmedia AI+</span>
+            <span>11/02 23:20</span>
           </div>
           <div class="stars-badge" title="注目度 3/5">
             <span>★★★☆☆</span>
           </div>
         </div>
-        <h2 class="card-title">HN を表示: HackerBooks – HackerTube、ただし HN で言及されている書籍が対象</h2>
-        <p class="card-summary">Karpathy の HackerTube を見て、本にも同じことが欲しいと思いました。そこでクロードに作ってもらいました（Opus 5.5）。 2007 年から現在まで、少なくとも 2 人の異なる HN コメント投稿者が取り上げた書籍は約 16,500 冊です。各書籍には、その書籍について言及したコメントへのリンクが付いています。データはaboutページからダウンロード可能です。クレになること</p>
-        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Hacker</span></div>
+        <h2 class="card-title">Anthropic、IPO申請書を修正 7?9月売上高は約170億ドル、インフラ契約額は約8954億ドル</h2>
+        <p class="card-summary">Anthropicは、証券取引委員会（SEC）にIPOに向けた登録届出書の修正版を提出した。第3四半期の売上高は前年同期比約12.3倍の約169億ドルに拡大した一方、営業損益は赤字に転落。また、AI計算資源やインフラに関する将来の支出約束額が約8954億ドルに上ることも明らかにした。</p>
+        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#ITmedia</span></div>
         <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('b149e19cb64e87a61c93ee60f836b0bd', event)">
+          <button class="read-toggle-btn" onclick="toggleRead('e3cebe21c21c0f1469e233a6a38bd259', event)">
             <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
           </button>
-          <a href="https://hackerbooks.org" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('b149e19cb64e87a61c93ee60f836b0bd')">元記事を読む →</a>
+          <a href="https://www.itmedia.co.jp/news/article/2611/03/2000002831/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('e3cebe21c21c0f1469e233a6a38bd259')">元記事を読む →</a>
         </div>
       </article>
 
-      <article class="article-card " id="card-76c1b01a7bf9c5eefe6a18374e78863b" data-id="76c1b01a7bf9c5eefe6a18374e78863b" data-source="site-GIZMODO_Japan" data-score="3" data-featured="false">
+      <article class="article-card " id="card-1e6d9dbc0f3a72cb9501cad2c85e1fea" data-id="1e6d9dbc0f3a72cb9501cad2c85e1fea" data-source="site-GIZMODO_Japan" data-score="3" data-featured="false">
         <div class="meta-row">
           <div class="source-group">
             <span class="category-tag">国内</span>
             <span class="source-tag">GIZMODO Japan</span>
-            <span>11/01 12:00</span>
+            <span>11/02 23:00</span>
           </div>
           <div class="stars-badge" title="注目度 3/5">
             <span>★★★☆☆</span>
           </div>
         </div>
-        <h2 class="card-title">疑っても止まれない。AIの「都合のいい思考」を読んでみよう</h2>
-        <p class="card-summary">課題を解くために関係ない人を騙そうとしたAI。どうしてそうなっちゃったんでしょう？英国AIセキュリティ研究所が「Claude Mythos 5」というAIに演習用のコンピューターに侵入するという課題を与えました。それからしばらくして、開発元…</p>
+        <h2 class="card-title">パスワードを盗む必要すらなし。Linuxの脆弱性が発見される</h2>
+        <p class="card-summary">AnthropicのAIがLinuxカーネルの深刻な脆弱性を発見し、ログインなしでの管理者操作を実証しました。最高レベルの危険度と評価されたこの問題の詳細と、サーバー管理者が今すぐ確認すべき修正版へのアップデート情報について解説します。</p>
         <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#GIZMODO</span></div>
         <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('76c1b01a7bf9c5eefe6a18374e78863b', event)">
+          <button class="read-toggle-btn" onclick="toggleRead('1e6d9dbc0f3a72cb9501cad2c85e1fea', event)">
             <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
           </button>
-          <a href="https://www.gizmodo.jp/article/2610-claude-mythos-ai-cot-momentum/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('76c1b01a7bf9c5eefe6a18374e78863b')">元記事を読む →</a>
+          <a href="https://www.gizmodo.jp/article/2611-linux-kernel-vulnerability-multipath-tcp/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('1e6d9dbc0f3a72cb9501cad2c85e1fea')">元記事を読む →</a>
         </div>
       </article>
 
-      <article class="article-card featured-pick" id="card-8aa3793289fd55ba4730c18a3e9b0515" data-id="8aa3793289fd55ba4730c18a3e9b0515" data-source="site-GIZMODO_Japan" data-score="4" data-featured="true">
+      <article class="article-card " id="card-ba5bd6f369825260a040fea84ee5f807" data-id="ba5bd6f369825260a040fea84ee5f807" data-source="site-ITmedia_AI_" data-score="3" data-featured="false">
         <div class="meta-row">
           <div class="source-group">
             <span class="category-tag">国内</span>
-            <span class="source-tag">GIZMODO Japan</span>
-            <span>11/01 10:00</span>
+            <span class="source-tag">ITmedia AI+</span>
+            <span>11/02 22:07</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">Marvell、光通信技術のLumentumを約18兆円で買収 AIデータセンターの高速化に対応</h2>
+        <p class="card-summary">半導体大手のMarvell Technologyは、光通信関連製品を手掛けるLumentum Holdingsを買収することで合意したと発表した。買収額は約1150億ドル。AIデータセンターで急増するデータ通信需要に対応するため、自社の半導体技術とLumentumの光通信技術を統合し、次世代AI接続技術の提供を目指す。</p>
+        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#ITmedia</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('ba5bd6f369825260a040fea84ee5f807', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.itmedia.co.jp/news/article/2611/03/2000002830/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('ba5bd6f369825260a040fea84ee5f807')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-19f6490a41c933ac1b87e8d4b391d6a1" data-id="19f6490a41c933ac1b87e8d4b391d6a1" data-source="site-MIT_News__AI_" data-score="4" data-featured="true">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">論文</span>
+            <span class="source-tag">MIT News (AI)</span>
+            <span>11/02 19:55</span>
           </div>
           <div class="stars-badge" title="注目度 4/5">
             <span>★★★★☆</span>
           </div>
         </div>
-        <h2 class="card-title">Claudeが“あえて画像生成しない”理由が判明。背景には「人類滅亡」への懸念も</h2>
-        <p class="card-summary">Claudeが画像生成を行わない理由とAnthropic社の安全性への姿勢を解説。人類滅亡の懸念も交えた開発方針の裏側に迫ります。</p>
-        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#GIZMODO</span></div>
+        <h2 class="card-title">重要な瞬間に向けてパワーアップ</h2>
+        <p class="card-summary">MIT エネルギー イニシアチブの年次研究会議では、核の復活から量子ビットに至るまで、今日のテクノロジーの展開から明日のブレークスルーの発見までを追跡しました。</p>
+        <div class="tags-row"><span class="tag-badge">#論文</span><span class="tag-badge">#MIT</span></div>
         <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('8aa3793289fd55ba4730c18a3e9b0515', event)">
+          <button class="read-toggle-btn" onclick="toggleRead('19f6490a41c933ac1b87e8d4b391d6a1', event)">
             <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
           </button>
-          <a href="https://www.gizmodo.jp/article/claude-image-generation-reason/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('8aa3793289fd55ba4730c18a3e9b0515')">元記事を読む →</a>
+          <a href="https://news.mit.edu/2026/powering-up-for-pivotal-moment-1102" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('19f6490a41c933ac1b87e8d4b391d6a1')">元記事を読む →</a>
         </div>
       </article>
 
-      <article class="article-card " id="card-57a567c31f8b5fe6775921322010651e" data-id="57a567c31f8b5fe6775921322010651e" data-source="site-GIZMODO_Japan" data-score="3" data-featured="false">
+      <article class="article-card " id="card-79179116f9833abb884fa9c82a4ea93e" data-id="79179116f9833abb884fa9c82a4ea93e" data-source="site-Hacker_News__AI_Top_" data-score="3" data-featured="false">
         <div class="meta-row">
           <div class="source-group">
-            <span class="category-tag">国内</span>
-            <span class="source-tag">GIZMODO Japan</span>
-            <span>11/01 03:00</span>
+            <span class="category-tag">開発</span>
+            <span class="source-tag">Hacker News (AI Top)</span>
+            <span>11/02 19:27</span>
           </div>
           <div class="stars-badge" title="注目度 3/5">
             <span>★★★☆☆</span>
           </div>
         </div>
-        <h2 class="card-title">AIアシスタント、メガネじゃなくてイヤホンが最適解じゃん？</h2>
-        <p class="card-summary">AIアシスタントの持ち歩きにメガネではなくイヤホンが最適な理由を解説。プライバシーへの配慮や既存の普及率を活かした現実的なAI活用法について紹介します。</p>
-        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#GIZMODO</span></div>
+        <h2 class="card-title">オラクル、AI構築資金調達のため200億ドルの新株と社債の売却を申請</h2>
+        <p class="card-summary">記事のURL: https://www.cnbc.com/2026/11/02/oracle-files-to-sell-20-billion-in-new-stock-bonds-to-finance-ai-buildout.html コメントURL: https://news.ycombinator.com/item?id=50342284 ポイント: 161 # コメント: 123</p>
+        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Hacker</span></div>
         <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('57a567c31f8b5fe6775921322010651e', event)">
+          <button class="read-toggle-btn" onclick="toggleRead('79179116f9833abb884fa9c82a4ea93e', event)">
             <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
           </button>
-          <a href="https://www.gizmodo.jp/article/2610-ai-assistant-earphone-vs-glasses/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('57a567c31f8b5fe6775921322010651e')">元記事を読む →</a>
+          <a href="https://www.cnbc.com/2026/11/02/oracle-files-to-sell-20-billion-in-new-stock-bonds-to-finance-ai-buildout.html" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('79179116f9833abb884fa9c82a4ea93e')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-921a51f1a19b0865de3095c92ceefd27" data-id="921a51f1a19b0865de3095c92ceefd27" data-source="site-Hacker_News__AI_Top_" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">開発</span>
+            <span class="source-tag">Hacker News (AI Top)</span>
+            <span>11/02 18:54</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">AI時代のエゴレスな数学</h2>
+        <p class="card-summary">記事URL: https://terrytao.wordpress.com/2026/11/02/egoless-mathematics-in-the-ai-era/ コメントURL: https://news.ycombinator.com/item?id=50341736 ポイント: 120 # コメント数: 82</p>
+        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Hacker</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('921a51f1a19b0865de3095c92ceefd27', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://terrytao.wordpress.com/2026/11/02/egoless-mathematics-in-the-ai-era/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('921a51f1a19b0865de3095c92ceefd27')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-a41b4f5d8954f24b00c36bfe04454c4a" data-id="a41b4f5d8954f24b00c36bfe04454c4a" data-source="site-Hacker_News__AI_Top_" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">開発</span>
+            <span class="source-tag">Hacker News (AI Top)</span>
+            <span>11/02 18:10</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">商品動画作成スキル</h2>
+        <p class="card-summary">記事URL: https://github.com/aaitor/skill-video-studio コメントURL: https://news.ycombinator.com/item?id=50340992 ポイント: 69 # コメント: 22</p>
+        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Hacker</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('a41b4f5d8954f24b00c36bfe04454c4a', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://github.com/aaitor/skill-video-studio" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('a41b4f5d8954f24b00c36bfe04454c4a')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-64b539777c9b52d3f1618a43239fce43" data-id="64b539777c9b52d3f1618a43239fce43" data-source="site-OpenAI_Blog" data-score="4" data-featured="true">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">企業</span>
+            <span class="source-tag">OpenAI Blog</span>
+            <span>11/02 15:30</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">Git と OpenAI のスケーリング</h2>
+        <p class="card-summary">OpenAI は、Codex が可能にする開発規模に合わせて設計された Git 互換バックエンドである Pando をどのように構築したか。</p>
+        <div class="tags-row"><span class="tag-badge">#企業</span><span class="tag-badge">#OpenAI</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('64b539777c9b52d3f1618a43239fce43', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://openai.com/index/scaling-git-at-openai" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('64b539777c9b52d3f1618a43239fce43')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-c155a34806a10bfa0227eb07a4148528" data-id="c155a34806a10bfa0227eb07a4148528" data-source="site-OpenAI_Blog" data-score="4" data-featured="true">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">企業</span>
+            <span class="source-tag">OpenAI Blog</span>
+            <span>11/02 15:00</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">グリッドプロテクタープログラムの紹介</h2>
+        <p class="card-summary">OpenAI のグリッド プロテクター プログラムは、電力会社と協力して、将来のコンピューティング キャンパスがグリッドの信頼性をサポートし、消費者の電力コストを保護できるように支援します。</p>
+        <div class="tags-row"><span class="tag-badge">#企業</span><span class="tag-badge">#OpenAI</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('c155a34806a10bfa0227eb07a4148528', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://openai.com/index/grid-protectors-program" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('c155a34806a10bfa0227eb07a4148528')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-787317c0275e6484ed5c3508787b86fc" data-id="787317c0275e6484ed5c3508787b86fc" data-source="site-Zenn__AI_Topic_" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">開発</span>
+            <span class="source-tag">Zenn (AI Topic)</span>
+            <span>11/02 14:40</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">AIの定期タスクを止めずに回す：使用量の上限・モデルの使い分け・時間の分散・見張り役</h2>
+        <p class="card-summary">AIエージェントには、決まった時間に仕事をさせる「スケジュールタスク」を設定できます。毎朝のニュースまとめ、毎週のレポート、記事の投稿などです。 便利な反面、数が増えると困ったことが起きます。気づいたら止まっている。朝に失敗したのに、夜まで誰も気づかない。使用量の上限に当たって、まとめて失敗する。 この記事では、AIの定期タスクを止めずに回すための工夫を4つ紹介します。 使用量の上限を知る モデルを使い分ける 実行時間を分散させる 見張り役のタスクを置く 例はClaudeのスケジュールタスクですが、考え方は他のAIサービスでも同じです。 1. 使用量の上限を知る AIのサブスクリ...</p>
+        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('787317c0275e6484ed5c3508787b86fc', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://zenn.dev/shoyomayabot/articles/keep-scheduled-ai-tasks-running" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('787317c0275e6484ed5c3508787b86fc')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-ec0f034db6b7bf29b4787160705fa6ac" data-id="ec0f034db6b7bf29b4787160705fa6ac" data-source="site-Zenn__AI_Topic_" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">開発</span>
+            <span class="source-tag">Zenn (AI Topic)</span>
+            <span>11/02 14:17</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">AIコーディングエージェント向け検出器「impeccable」で自分のHTMLを検査したら94件の指摘が出た</h2>
+        <p class="card-summary">要約 海外AIネタ100日チャレンジのDay 034。GitHub TrendingのJavaScript/TypeScriptランキングで急伸していたpbakaus/impeccable(Apache-2.0)を試した。 impeccableは、AIコーディングエージェントが生成するUIに特有の「いかにもAI感(AIスロップ)」なデザインパターンを、62個の決定論的なルールでLLM・APIキーなしに検出するCLIツール。 本チャレンジ自身が毎日作っているX投稿用シェアカードHTML(posts/cards/day-NNN.html、31枚)とその土台のテンプレートに対してimpe...</p>
+        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('ec0f034db6b7bf29b4787160705fa6ac', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://zenn.dev/matsushima_a/articles/day-034-impeccable-detect-contrast" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('ec0f034db6b7bf29b4787160705fa6ac')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-74848808399e30c642f542910e66ad82" data-id="74848808399e30c642f542910e66ad82" data-source="site-Zenn__AI_Topic_" data-score="4" data-featured="true">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">開発</span>
+            <span class="source-tag">Zenn (AI Topic)</span>
+            <span>11/02 14:15</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">AIエージェントの購入委任をRubyで扱う — AP2対応SDK v1.0.0を公開しました</h2>
+        <p class="card-summary">AIエージェントがユーザーの代わりに商品を購入する場合、販売者はどうやって「このAgentには、その商品を買う権限がある」と確認すればよいのでしょうか。 この課題に取り組む仕組みの一つが、AP2（Agentic Payment Protocol）です。 AP2のCheckout MandateをRubyで扱うOSS、ap2_mandate_verifierのv1.0.0を公開しました。 以前の記事では、v0.1.0を使い、正常・改ざん・期限切れの3ケースで「購入委任を検証する」ところを紹介しました。 今回は、そこから広がった発行 → 提示 → 検証 → Checkout Receipt確...</p>
+        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('74848808399e30c642f542910e66ad82', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://zenn.dev/ccq/articles/6ca97030e6c8fd" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('74848808399e30c642f542910e66ad82')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-14d8f064d7376852f04b731dcceea972" data-id="14d8f064d7376852f04b731dcceea972" data-source="site-Zenn__AI_Topic_" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">開発</span>
+            <span class="source-tag">Zenn (AI Topic)</span>
+            <span>11/02 13:41</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">EVM simulationが成功しても止める：AIエージェントのALLOW・WARN・BLOCK設計</h2>
+        <p class="card-summary">EVMトランザクションを組み立てるエージェントでは、送信前に「callが成功するか」と「アプリの方針として進めてよいか」を分けて扱う必要があります。 TxGuardの判定層を使って、同じsimulation成功でもALLOW・WARN・BLOCKが変わる例をローカルで再現します。対象は、すでにEVM callを作っているTypeScript開発者です。ウォレット接続や送信は行いません。 この記事では、TxGuardの判定層とSDKの動作をローカルで検証しています。公開APIの稼働、SDKのnpm公開、顧客利用や収益は今回確認していません。以下の出力は合成fixtureであり、実際のチェー...</p>
+        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('14d8f064d7376852f04b731dcceea972', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://zenn.dev/rinku/articles/evm-simulation-policy-decisions" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('14d8f064d7376852f04b731dcceea972')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-8002e79672fb21e9107deca08133ca95" data-id="8002e79672fb21e9107deca08133ca95" data-source="site-GIZMODO_Japan" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">国内</span>
+            <span class="source-tag">GIZMODO Japan</span>
+            <span>11/02 12:30</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">Google、宇宙でAIに俳句を詠ませる。いったい何を企んでる？</h2>
+        <p class="card-summary">Googleが宇宙空間でAIに俳句を詠ませる実験に成功しました。宇宙太陽光を活用したデータセンター構想の背景や課題を分かりやすく解説します。</p>
+        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#GIZMODO</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('8002e79672fb21e9107deca08133ca95', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.gizmodo.jp/article/2611-google-ai-space-haiku-project-suncatcher/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('8002e79672fb21e9107deca08133ca95')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-6539216db94ccaf37f1cd04ded171e13" data-id="6539216db94ccaf37f1cd04ded171e13" data-source="site-GIZMODO_Japan" data-score="4" data-featured="true">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">国内</span>
+            <span class="source-tag">GIZMODO Japan</span>
+            <span>11/02 12:00</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">履歴書も面接の受け答えもAIで。北朝鮮系のなりすまし就職が進化中</h2>
+        <p class="card-summary">履歴書をAIで作って、面接の受け答えもAIに考えてもらう。普通のオンラインの就職活動でも使われそうな方法ですが、その履歴書に書かれた名前や経歴が、そもそも偽物だったら…怖いですよね。Microsoft（マイクロソフト）が10月29日に公表し…</p>
+        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#GIZMODO</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('6539216db94ccaf37f1cd04ded171e13', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.gizmodo.jp/article/north-korean-ai-job-impersonation/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('6539216db94ccaf37f1cd04ded171e13')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-1468543483a0cb43fba47cdcf59ebb03" data-id="1468543483a0cb43fba47cdcf59ebb03" data-source="site-OpenAI_Blog" data-score="4" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">企業</span>
+            <span class="source-tag">OpenAI Blog</span>
+            <span>11/02 09:00</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">ライフヴァル</h2>
+        <p class="card-summary">LifeVal は、保育所の確保から財政や政府の事務手続きに至るまで、人々の日常業務の完了に AI がどの程度役立っているかを測定するベンチマークです。</p>
+        <div class="tags-row"><span class="tag-badge">#企業</span><span class="tag-badge">#OpenAI</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('1468543483a0cb43fba47cdcf59ebb03', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://openai.com/index/lifeval" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('1468543483a0cb43fba47cdcf59ebb03')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-7e01cd7ed6375f3a51e9b47f336a0947" data-id="7e01cd7ed6375f3a51e9b47f336a0947" data-source="site-ITmedia_AI_" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">国内</span>
+            <span class="source-tag">ITmedia AI+</span>
+            <span>11/02 06:00</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">富士通とNECのCFOが語る、2026年下期以降の「ITサービス需要動向」</h2>
+        <p class="card-summary">サイバー攻撃への緊急対応、膨らむAIコスト、部材の高騰といった不安要素が重なる中、ITサービス需要はどうなるのか。富士通とNECの受注状況と決算会見での発言から今後の需要動向を探る。</p>
+        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#ITmedia</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('7e01cd7ed6375f3a51e9b47f336a0947', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.itmedia.co.jp/enterprise/articles/2611/02/news053.html" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('7e01cd7ed6375f3a51e9b47f336a0947')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-2760df8f2bc2f8258770918cd3de0472" data-id="2760df8f2bc2f8258770918cd3de0472" data-source="site-MIT_News__AI_" data-score="4" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">論文</span>
+            <span class="source-tag">MIT News (AI)</span>
+            <span>11/02 05:35</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">Regina Barzilay 氏と Jim Collins 氏が、AI を活用した抗生物質発見の研究で AI および科学研究優秀賞を受賞したプリツカー賞を受賞</h2>
+        <p class="card-summary">MIT の教授たちは協力して、AI によって発見された最初の抗生物質を特定しました。これは、AI 主導の創薬における画期的な進歩として広く認識されています。</p>
+        <div class="tags-row"><span class="tag-badge">#論文</span><span class="tag-badge">#MIT</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('2760df8f2bc2f8258770918cd3de0472', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://news.mit.edu/2026/regina-barzilay-jim-collins-win-pritzker-prize-ai-and-science-research-excellence-1102" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('2760df8f2bc2f8258770918cd3de0472')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-9feee84b774c0c9a1a79aab6281b39df" data-id="9feee84b774c0c9a1a79aab6281b39df" data-source="site-arXiv_cs_AI" data-score="4" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">論文</span>
+            <span class="source-tag">arXiv cs.AI</span>
+            <span>11/02 05:00</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">ルールが増えるとリストも長くなりますか?隠れたルールのカリキュラムで自己進化するエージェントのベンチマークを行う</h2>
+        <p class="card-summary">arXiv:2610.40758v1 発表タイプ: 新しい要約: 自己進化するエージェントはフィードバックから永続的な状態を書き換えますが、これによって誰も教えてくれなかったルールを学習できるかどうかはほとんどテストされていません。エージェントは、各修正を例外として書き留めることによって合格することもでき、そのリストは n 回ごとに増加します。</p>
+        <div class="tags-row"><span class="tag-badge">#論文</span><span class="tag-badge">#arXiv</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('9feee84b774c0c9a1a79aab6281b39df', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://arxiv.org/abs/2610.40758" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('9feee84b774c0c9a1a79aab6281b39df')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-e7632b2f69a3c8084f2ddd580fa042c1" data-id="e7632b2f69a3c8084f2ddd580fa042c1" data-source="site-arXiv_cs_AI" data-score="4" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">論文</span>
+            <span class="source-tag">arXiv cs.AI</span>
+            <span>11/02 05:00</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">もっともらしい予測を超えて: Web 世界モデルにおける安全性の十分性</h2>
+        <p class="card-summary">arXiv:2610.40798v1 発表タイプ: 新しい要約: Web 世界のモデルでは、エージェントが行動する前に候補行動の結果を予測することが増えていますが、もっともらしい予測未来が必ずしも正しい安全性の決定をサポートしているわけではありません。 10 件の凍結からの 3,000 件の予測を人間がマッチングして評価した結果</p>
+        <div class="tags-row"><span class="tag-badge">#論文</span><span class="tag-badge">#arXiv</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('e7632b2f69a3c8084f2ddd580fa042c1', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://arxiv.org/abs/2610.40798" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('e7632b2f69a3c8084f2ddd580fa042c1')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-de197b45f87a71e252fd1c0e30b248e4" data-id="de197b45f87a71e252fd1c0e30b248e4" data-source="site-arXiv_cs_AI" data-score="4" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">論文</span>
+            <span class="source-tag">arXiv cs.AI</span>
+            <span>11/02 05:00</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">計算アービトラージの計算上の困難性を回避する</h2>
+        <p class="card-summary">arXiv:2610.40831v1 発表の種類: 新しい要約: AI モデル マーケットプレイスは、異種のコストと機能を持つプロバイダーをホストします。これらの違いは、仲介者がモデルのポートフォリオから推論を購入し、再販する計算上の裁定取引の機会を生み出します (Olmedo et al., 2026)。</p>
+        <div class="tags-row"><span class="tag-badge">#論文</span><span class="tag-badge">#arXiv</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('de197b45f87a71e252fd1c0e30b248e4', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://arxiv.org/abs/2610.40831" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('de197b45f87a71e252fd1c0e30b248e4')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-ffb141a76fa05b603e3e661788aee8cc" data-id="ffb141a76fa05b603e3e661788aee8cc" data-source="site-arXiv_cs_AI" data-score="4" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">論文</span>
+            <span class="source-tag">arXiv cs.AI</span>
+            <span>11/02 05:00</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">オーディオ大規模言語モデルにおけるマルチモーダル音声感情認識の不一致認識評価</h2>
+        <p class="card-summary">arXiv:2610.40883v1 アナウンスの種類: 新しい要約: 音声対話型の大規模言語モデルは、話者の発言内容と発言方法の両方を処理しますが、2 つのチャネルが常に一致するとは限りません。私たちは、その意見の不一致が音声の感情認識を低下させるかどうかを尋ねます。テキストとオーディオを共有価数にマッピングする - a</p>
+        <div class="tags-row"><span class="tag-badge">#論文</span><span class="tag-badge">#arXiv</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('ffb141a76fa05b603e3e661788aee8cc', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://arxiv.org/abs/2610.40883" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('ffb141a76fa05b603e3e661788aee8cc')">元記事を読む →</a>
         </div>
       </article>
     </div>
