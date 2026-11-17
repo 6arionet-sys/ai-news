@@ -450,7 +450,7 @@
         <div class="logo-badge">AI</div>
         <div>
           <h1>最新AI系ニュースまとめ</h1>
-          <div class="updated-text">更新: 2026/11/16 09:03 (全19件)</div>
+          <div class="updated-text">更新: 2026/11/17 11:59 (全28件)</div>
         </div>
       </div>
       <div class="header-actions">
@@ -467,16 +467,16 @@
     </a>
     <a href="#unread" class="tab-item active" onclick="switchTab(event, 'unread')">
       <span>未読</span>
-      <span class="tab-badge" id="badge-unread">19</span>
-    </a>
-    <a href="#site-Anthropic__________" class="tab-item" onclick="switchTab(event, 'site-Anthropic__________')">
-      <span>Anthropic関連（海外メディア）</span>
-      <span class="cat-label">[海外]</span>
-      <span class="tab-badge">4</span>
+      <span class="tab-badge" id="badge-unread">28</span>
     </a>
     <a href="#site-Hacker_News__AI_Top_" class="tab-item" onclick="switchTab(event, 'site-Hacker_News__AI_Top_')">
       <span>Hacker News (AI Top)</span>
       <span class="cat-label">[開発]</span>
+      <span class="tab-badge">4</span>
+    </a>
+    <a href="#site-Anthropic__________" class="tab-item" onclick="switchTab(event, 'site-Anthropic__________')">
+      <span>Anthropic関連（海外メディア）</span>
+      <span class="cat-label">[海外]</span>
       <span class="tab-badge">4</span>
     </a>
     <a href="#site-ITmedia_AI_" class="tab-item" onclick="switchTab(event, 'site-ITmedia_AI_')">
@@ -484,10 +484,15 @@
       <span class="cat-label">[国内]</span>
       <span class="tab-badge">4</span>
     </a>
+    <a href="#site-Microsoft_Research" class="tab-item" onclick="switchTab(event, 'site-Microsoft_Research')">
+      <span>Microsoft Research</span>
+      <span class="cat-label">[企業]</span>
+      <span class="tab-badge">1</span>
+    </a>
     <a href="#site-OpenAI_Blog" class="tab-item" onclick="switchTab(event, 'site-OpenAI_Blog')">
       <span>OpenAI Blog</span>
       <span class="cat-label">[企業]</span>
-      <span class="tab-badge">2</span>
+      <span class="tab-badge">4</span>
     </a>
     <a href="#site-Zenn__AI_Topic_" class="tab-item" onclick="switchTab(event, 'site-Zenn__AI_Topic_')">
       <span>Zenn (AI Topic)</span>
@@ -497,7 +502,12 @@
     <a href="#site-GIZMODO_Japan" class="tab-item" onclick="switchTab(event, 'site-GIZMODO_Japan')">
       <span>GIZMODO Japan</span>
       <span class="cat-label">[国内]</span>
-      <span class="tab-badge">1</span>
+      <span class="tab-badge">4</span>
+    </a>
+    <a href="#site-arXiv_cs_AI" class="tab-item" onclick="switchTab(event, 'site-arXiv_cs_AI')">
+      <span>arXiv cs.AI</span>
+      <span class="cat-label">[論文]</span>
+      <span class="tab-badge">3</span>
     </a>
     <a href="#read" class="tab-item" onclick="switchTab(event, 'read')">
       <span>既読</span>
@@ -513,421 +523,619 @@
 
     <div id="articlesList">
 
-      <article class="article-card featured-pick" id="card-7ecd5af8bcd5b2ffb20fe44b3a55f92b" data-id="7ecd5af8bcd5b2ffb20fe44b3a55f92b" data-source="site-Anthropic__________" data-score="5" data-featured="true">
+      <article class="article-card " id="card-5c382cbcc1cad635560bf26afe2c9e74" data-id="5c382cbcc1cad635560bf26afe2c9e74" data-source="site-Hacker_News__AI_Top_" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">開発</span>
+            <span class="source-tag">Hacker News (AI Top)</span>
+            <span>11/17 02:13</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">Mem Is Shutting Down</h2>
+        <p class="card-summary">Article URL: https://get.mem.ai/blog/mem-is-shutting-down Comments URL: https://news.ycombinator.com/item?id=50526537 Points: 10 # Comments: 7</p>
+        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Hacker</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('5c382cbcc1cad635560bf26afe2c9e74', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://get.mem.ai/blog/mem-is-shutting-down" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('5c382cbcc1cad635560bf26afe2c9e74')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-ce5d66df57aac634e80cc561333ff41b" data-id="ce5d66df57aac634e80cc561333ff41b" data-source="site-Hacker_News__AI_Top_" data-score="4" data-featured="true">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">開発</span>
+            <span class="source-tag">Hacker News (AI Top)</span>
+            <span>11/17 02:12</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">Show HN: A free interactive course on AI agent governance</h2>
+        <p class="card-summary">Article URL: https://studio.sinapsdata.com.br Comments URL: https://news.ycombinator.com/item?id=50526527 Points: 6 # Comments: 2</p>
+        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Hacker</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('ce5d66df57aac634e80cc561333ff41b', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://studio.sinapsdata.com.br" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('ce5d66df57aac634e80cc561333ff41b')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-77336829256a44c6cfe6112423d3a68f" data-id="77336829256a44c6cfe6112423d3a68f" data-source="site-Anthropic__________" data-score="4" data-featured="true">
         <div class="meta-row">
           <div class="source-group">
             <span class="category-tag">海外</span>
             <span class="source-tag">Anthropic関連（海外メディア）</span>
-            <span>11/16 00:01</span>
+            <span>11/17 01:49</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">Anthropic&#x27;s IPO: How do you price the future of AI? - France 24</h2>
+        <p class="card-summary">Anthropic&#x27;s IPO: How do you price the future of AI? France 24</p>
+        <div class="tags-row"><span class="tag-badge">#海外</span><span class="tag-badge">#Anthropic関連（海外メディア）</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('77336829256a44c6cfe6112423d3a68f', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxNVjY4X056VVk4NS1MRjl4VVNsZEhxSUtDa2szT09DSExPXzFmX2hzRjAtbFVjS2lrOHd1VVItdDNCNDVKODB0bzQ3RWFRdUdtRFNXWG1helpqS0dneDhMdmphWGtObzZwcFFkUk51bTM1RDNCLWRITHlMMzJDRjRDNTdVVE80RnN3M1FJc3ViSXpxQzhKQjlxMHAtR3Y?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('77336829256a44c6cfe6112423d3a68f')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-1647fe421f2fa0f8c96c2686c44fd729" data-id="1647fe421f2fa0f8c96c2686c44fd729" data-source="site-ITmedia_AI_" data-score="4" data-featured="true">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">国内</span>
+            <span class="source-tag">ITmedia AI+</span>
+            <span>11/17 01:45</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">OpenAI、児童性的虐待コンテンツ（CSAM）検出ツールを公開 ChatGPTで探すと24時間アカウント停止の警告も</h2>
+        <p class="card-summary">OpenAIは、児童性的虐待コンテンツ（CSAM）を検出するための新たな画像分類ツールを発表した。従来は検出が困難だった新規画像やAI生成画像も対象とし、審査を通過した組織へAPI経由で無償提供する。同時にChatGPT上でのCSAM検索行為に対し、アカウントを24時間停止する警告機能も導入した。</p>
+        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#ITmedia</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('1647fe421f2fa0f8c96c2686c44fd729', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.itmedia.co.jp/news/article/2611/17/2000003254/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('1647fe421f2fa0f8c96c2686c44fd729')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-89684a7ca708b6bc076e7af68f0982db" data-id="89684a7ca708b6bc076e7af68f0982db" data-source="site-Hacker_News__AI_Top_" data-score="4" data-featured="true">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">開発</span>
+            <span class="source-tag">Hacker News (AI Top)</span>
+            <span>11/17 01:18</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">Running coding agents without handing them my credentials</h2>
+        <p class="card-summary">Article URL: https://blog.antonio.cx/running-agents-with-lend Comments URL: https://news.ycombinator.com/item?id=50526152 Points: 27 # Comments: 4</p>
+        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Hacker</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('89684a7ca708b6bc076e7af68f0982db', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://blog.antonio.cx/running-agents-with-lend" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('89684a7ca708b6bc076e7af68f0982db')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-16d6ceeab9075c1995a78443989fc468" data-id="16d6ceeab9075c1995a78443989fc468" data-source="site-ITmedia_AI_" data-score="4" data-featured="true">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">国内</span>
+            <span class="source-tag">ITmedia AI+</span>
+            <span>11/17 00:52</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">ジェンスン・フアン氏復帰を求める公開書簡に18万人以上が署名 現役従業員9000人に加えてイーロン・マスク氏らも賛同</h2>
+        <p class="card-summary">NVIDIAの創業者、ジェンスン・フアン氏のCEOへの復帰を求める公開書簡に、18万人を超える署名が集まっている。</p>
+        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#ITmedia</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('16d6ceeab9075c1995a78443989fc468', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.itmedia.co.jp/aiplus/article/2611/17/2000003249/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('16d6ceeab9075c1995a78443989fc468')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-56c1d1ce85401acde1ac230ebd25ab92" data-id="56c1d1ce85401acde1ac230ebd25ab92" data-source="site-Anthropic__________" data-score="4" data-featured="true">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">海外</span>
+            <span class="source-tag">Anthropic関連（海外メディア）</span>
+            <span>11/17 00:36</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">Seoul stocks open lower amid AI concerns ahead of Nvidia earnings, Anthropic IPO - The Korea Times</h2>
+        <p class="card-summary">Seoul stocks open lower amid AI concerns ahead of Nvidia earnings, Anthropic IPO The Korea Times</p>
+        <div class="tags-row"><span class="tag-badge">#海外</span><span class="tag-badge">#Anthropic関連（海外メディア）</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('56c1d1ce85401acde1ac230ebd25ab92', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxPVlRiQUY4eEZDSEVfUDZYWnhGdHo0bi1RYkVJTDdWUHRJdFNTZWRHejlyRHpCMnFCbEVvOHp3ZWFGZkUyRUVqR3NfeG16eDhxODI0dFFlamxHX1B1Y2JJOGxpWVJTcnJxVW1oNWFRQmR1bTNLeDROSDlEelhONjJRVlhSVUF5bGtES3R2ellWb0VKMWVjbEkxV1VSV1ExaE5kdGt3bEJCQU43Tld6YTZqVUpCMTBzckgzQzJnYXpIak9fVzl0SnBNWWk5V0zSAdIBQVVfeXFMTXJqNTVhS28tTlBScjdCVF8zcGlIUXRiT3Y5U0ZKdWZBb2FJc1VYWUg1Y2tZSTRkSWVfYlZUMVhWLWxReF9ZTlFuN2NJYWlfS1liRERtVVNDUVBUOGhKY1ZpUFpRb09ia0hVVnJNbUk5MXpYbnZzTEVNY2dQLVd1a0o0R0xra0dfX3ZaUW9LZmVOVlRTblZtUTJzVzR0QWplYTlDVU5yZDVHTmp6U2J1RlVDaE9Nc2lSZGZNc29abjU3RlJvUkttamFtX1dJUnFwaWNB?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('56c1d1ce85401acde1ac230ebd25ab92')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-e736463c72de4300d29f482675a5304e" data-id="e736463c72de4300d29f482675a5304e" data-source="site-Anthropic__________" data-score="4" data-featured="true">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">海外</span>
+            <span class="source-tag">Anthropic関連（海外メディア）</span>
+            <span>11/17 00:30</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">Kospi opens lower as AI concerns weigh ahead of Nvidia earnings, Anthropic IPO - Korea JoongAng Daily</h2>
+        <p class="card-summary">Kospi opens lower as AI concerns weigh ahead of Nvidia earnings, Anthropic IPO Korea JoongAng Daily</p>
+        <div class="tags-row"><span class="tag-badge">#海外</span><span class="tag-badge">#Anthropic関連（海外メディア）</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('e736463c72de4300d29f482675a5304e', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxQVEVzVkRHYlF6SlNHVDF3bDhpZ0hFV1pWYkhiLVFqOE05VHJ6bnlTU1lQb0d5cHBFdkZDb09NcDdWbUNVTFZXYzJIRkt0R3pNd1hhMk1PNnRzdlpBVW9WM3VETm9SSExTOEVDOEVkdEdtVGlOWnBUb09YWkw4VDdoYlE3dmtET3VXMkZzRUw0Qmt3SmhocU1xd1ludUtPclZzM3h2WTFrT0Z6M2FnR1dLRDkxTlhHMHVJZ041M3JwY0F2TlJSUENQTC1B?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('e736463c72de4300d29f482675a5304e')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-bca81c77310ee769e170eaa5c3c631ef" data-id="bca81c77310ee769e170eaa5c3c631ef" data-source="site-Hacker_News__AI_Top_" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">開発</span>
+            <span class="source-tag">Hacker News (AI Top)</span>
+            <span>11/17 00:23</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">Pentagon fails ninth straight audit despite progress in organizing finances</h2>
+        <p class="card-summary">Article URL: https://www.reuters.com/business/aerospace-defense/pentagon-fails-ninth-straight-audit-despite-progress-organizing-finances-2026-11-16/ Comments URL: https://news.ycombinator.com/item?id=50525658 Points: 44 # Comments: 6</p>
+        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Hacker</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('bca81c77310ee769e170eaa5c3c631ef', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.reuters.com/business/aerospace-defense/pentagon-fails-ninth-straight-audit-despite-progress-organizing-finances-2026-11-16/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('bca81c77310ee769e170eaa5c3c631ef')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-e5faadd21ff6209b1e58916c17fa2172" data-id="e5faadd21ff6209b1e58916c17fa2172" data-source="site-Anthropic__________" data-score="4" data-featured="true">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">海外</span>
+            <span class="source-tag">Anthropic関連（海外メディア）</span>
+            <span>11/17 00:09</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">S&amp;P 500, Dow, Nasdaq End Lower As Investors Hold Back Ahead Of Nvidia Earnings, Anthropic IPO This Week — NVDA, TSLA, ANT In Focus - Yahoo Finance</h2>
+        <p class="card-summary">S&amp;P 500, Dow, Nasdaq End Lower As Investors Hold Back Ahead Of Nvidia Earnings, Anthropic IPO This Week — NVDA, TSLA, ANT In Focus Yahoo Finance</p>
+        <div class="tags-row"><span class="tag-badge">#海外</span><span class="tag-badge">#Anthropic関連（海外メディア）</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('e5faadd21ff6209b1e58916c17fa2172', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxOalNwWF9kRnJGMlNfeEVRZTNoQzFaeFhNRGVCNmd6aGdMT3Q5V2lObXBsZ3ctLUtDQWxWdzB3djZpd0xrMmItaXZMazZMMEVMYVN4VWd0S0VIcmVhQU1mQTJZLU1YSko3M19kVWVMc3M2TU5LQV9xVTNwM2tyckZEcVBBVEFoa29qLTJxcjZR?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('e5faadd21ff6209b1e58916c17fa2172')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-dad92330912edbeac5b34f07b10ecd2a" data-id="dad92330912edbeac5b34f07b10ecd2a" data-source="site-ITmedia_AI_" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">国内</span>
+            <span class="source-tag">ITmedia AI+</span>
+            <span>11/17 00:00</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">大手自動車メーカーの検図工数を90％削減 AIが図面の重要な変更点を判別</h2>
+        <p class="card-summary">Liberty Dataは、生成AIを活用した図面関連業務の自動化サービス「Liberty図面AI」における新旧図面の差分抽出機能の導入事例を公開した。図面の内容や設計指示の意図を理解し、検図者が優先して確認すべき変更点を判別する機能で、大手自動車メーカーでは検図工数を90％削減したという。</p>
+        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#ITmedia</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('dad92330912edbeac5b34f07b10ecd2a', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://monoist.itmedia.co.jp/mn/articles/2611/17/news014.html" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('dad92330912edbeac5b34f07b10ecd2a')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-9f4336d3cdb9db77ca1a82749498fa2a" data-id="9f4336d3cdb9db77ca1a82749498fa2a" data-source="site-ITmedia_AI_" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">国内</span>
+            <span class="source-tag">ITmedia AI+</span>
+            <span>11/16 22:00</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">クレディセゾンはなぜChatGPTでROI954％・年169時間削減を達成できたのか</h2>
+        <p class="card-summary">クレディセゾンは、わずか1カ月の検証を経てChatGPT Enterpriseの全社一斉導入に踏み切った。経営層の巻き込みと現場の工夫を両立させた、同社の実践的な推進アプローチとは。</p>
+        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#ITmedia</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('9f4336d3cdb9db77ca1a82749498fa2a', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://kn.itmedia.co.jp/kn/article/2611/17/2000003219/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('9f4336d3cdb9db77ca1a82749498fa2a')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-a2a3e162a6753dc6c82ee4ca18b504c4" data-id="a2a3e162a6753dc6c82ee4ca18b504c4" data-source="site-Microsoft_Research" data-score="4" data-featured="true">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">企業</span>
+            <span class="source-tag">Microsoft Research</span>
+            <span>11/16 17:01</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">TokenEconomizer: Learning from Experience to Make AI Coding Agents More Efficient</h2>
+        <p class="card-summary">AI coding agents can waste time and tokens relearning the same lessons. TokenEconomizer is an open-source plugin that builds on past sessions to cut costs while maintaining task success. It’s a path toward coding agents that learn not only how to solve tasks, but also how to spend computation more e</p>
+        <div class="tags-row"><span class="tag-badge">#企業</span><span class="tag-badge">#Microsoft</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('a2a3e162a6753dc6c82ee4ca18b504c4', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.microsoft.com/en-us/research/blog/tokeneconomizer-learning-from-experience-to-make-ai-coding-agents-more-efficient/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('a2a3e162a6753dc6c82ee4ca18b504c4')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-a8005cc7b5953959a8d4c0b164d1b528" data-id="a8005cc7b5953959a8d4c0b164d1b528" data-source="site-OpenAI_Blog" data-score="4" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">企業</span>
+            <span class="source-tag">OpenAI Blog</span>
+            <span>11/16 17:00</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">Broadening access to AI for scientists</h2>
+        <p class="card-summary">We’re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.</p>
+        <div class="tags-row"><span class="tag-badge">#企業</span><span class="tag-badge">#OpenAI</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('a8005cc7b5953959a8d4c0b164d1b528', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://openai.com/index/expanding-chatgpt-for-academic-researchers" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('a8005cc7b5953959a8d4c0b164d1b528')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-32c75522a0ea8b0248174248ec98aa13" data-id="32c75522a0ea8b0248174248ec98aa13" data-source="site-OpenAI_Blog" data-score="4" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">企業</span>
+            <span class="source-tag">OpenAI Blog</span>
+            <span>11/16 17:00</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">Strengthening the fight against online child sexual abuse with new tools and support</h2>
+        <p class="card-summary">New tools, practical guidance, and partnerships will help prevent, detect and respond to online child sexual exploitation and abuse.</p>
+        <div class="tags-row"><span class="tag-badge">#企業</span><span class="tag-badge">#OpenAI</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('32c75522a0ea8b0248174248ec98aa13', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://openai.com/index/strengthening-online-child-safety" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('32c75522a0ea8b0248174248ec98aa13')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-4781947ce5e6b64fc5fe9dd893c08113" data-id="4781947ce5e6b64fc5fe9dd893c08113" data-source="site-Zenn__AI_Topic_" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">開発</span>
+            <span class="source-tag">Zenn (AI Topic)</span>
+            <span>11/16 16:52</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">AIとの会話を上書きしない — BranchとHandoverを分けて作った</h2>
+        <p class="card-summary">上原正吉（EarthLink Network Co., Ltd.）。AI会社・AI社員による業務自動化と、人の逐次介入なしに24時間自動開発を回す仕組みを自社で実践しています。開発ノウハウと具体的な設定方法、運用して分かった改善点を公開しています。 AIとの会話を上書きしない — BranchとHandoverを分けて作った 結論 BranchとHandoverは別の機能です。 Branchは会話を途中まで複製し、Handoverは要点を別モードへ渡します。 分岐しても元の会話は変わりません。 戻すには採用の申請と承認が要ります。 引き継ぎは、画面に出るだけでは足...</p>
+        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('4781947ce5e6b64fc5fe9dd893c08113', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://zenn.dev/chooser/articles/pf-036-product-story" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('4781947ce5e6b64fc5fe9dd893c08113')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-ce3376c1d1776aaffe6a25aa341d1336" data-id="ce3376c1d1776aaffe6a25aa341d1336" data-source="site-Zenn__AI_Topic_" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">開発</span>
+            <span class="source-tag">Zenn (AI Topic)</span>
+            <span>11/16 16:36</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">さくらの AI Engine を自作の多役割チャットに足して、同じモデル・別ホストで比べてみた</h2>
+        <p class="card-summary">はじめに 私は、複数の LLM に役割を与えて会話させるアプリを、自作しています。2024 年の中ごろから LangChain を使って作っていて、Git で管理し始めたのは 2025 年 7 月からです。そこから次の 2 つに発展してきました。 MultiRoleChat: ロール（役割）ごとに LLM のプロバイダとモデルを設定して、複数の AI に会話させるアプリです。設定をエディタで直接書く必要があり、同じ人材を別の組織で使うときはコピーが必要でした。現在は廃止しています。 MultiRoleStudio: 組織、人材、ワークフロー、割り当て（人材ごとの LLM と声）...</p>
+        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('ce3376c1d1776aaffe6a25aa341d1336', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://zenn.dev/tsukitsukiss/articles/sakura-ai-engine-challenge" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('ce3376c1d1776aaffe6a25aa341d1336')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-4f1b6010f97deaa946a77f3f221266e3" data-id="4f1b6010f97deaa946a77f3f221266e3" data-source="site-Zenn__AI_Topic_" data-score="4" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">開発</span>
+            <span class="source-tag">Zenn (AI Topic)</span>
+            <span>11/16 16:31</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">「Museメールは米加だけ」は本当か｜公式発表と日本の有料アカウントの実測を比べた</h2>
+        <p class="card-summary">はじめに Museのメール機能（@muse.aiのメールアドレス）について、「使えるのは米加の有料プランだけ」という言い回しが広まっている。公式発表がそう書いていたからだ。でも実際には、日本の有料アカウントで使えているという報告が複数出ている。 結論を先に置く。判定は「だいたい本当」。公式発表の文面は確かに「米加・有料」だった。ただ、公式ヘルプには対象地域やプランの線引きが書かれておらず、日本の有料アカウントで、表示・アドレス取得・送受信までできた実測が複数ある。ただし、「日本の有料ユーザー全員が使えるか」「Metaが公式に日本を対象地域と認めたか」は、2026年11月17日時点で未...</p>
+        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('4f1b6010f97deaa946a77f3f221266e3', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://zenn.dev/ocha50107/articles/331b909d5f2f16" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('4f1b6010f97deaa946a77f3f221266e3')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-b47e859b81723d85192c6fc34c58287a" data-id="b47e859b81723d85192c6fc34c58287a" data-source="site-Zenn__AI_Topic_" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">開発</span>
+            <span class="source-tag">Zenn (AI Topic)</span>
+            <span>11/16 16:13</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">「1月の計画に、AIの文字は無かった」CTO of the Year 2026 で話したこと</h2>
+        <p class="card-summary">こんにちは。株式会社トリプルスリーでCTOをしている中川です。 10月20日の「CTO of the Year 2026」で5分のピッチをし、オーディエンス賞を受賞することができました。そのとき話したことを、スライドと一緒にそのまま残しておきます。 題は「1月の計画に、AIの文字は無かった」です。今年の年初に出した会社の方針の資料に、AIという言葉は一度も出てきません。AIは使っていました。ただ、ここまで振り切る予定はありませんでした。 スライドは16枚です。舞台で話した言葉のまま載せます。 問い こんにちは。外食企業を支援しているトリプルスリーの中川です。 突然ですが、みなさん...</p>
+        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('b47e859b81723d85192c6fc34c58287a', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://zenn.dev/triplethree/articles/327e7e519e9bbe" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('b47e859b81723d85192c6fc34c58287a')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-7c39e7ba91d5b5a5c412531c3a1ed352" data-id="7c39e7ba91d5b5a5c412531c3a1ed352" data-source="site-GIZMODO_Japan" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">国内</span>
+            <span class="source-tag">GIZMODO Japan</span>
+            <span>11/16 12:45</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">眠っているPSPや3DSを、電子楽器として蘇らせる激ヤバソフト</h2>
+        <p class="card-summary">使わなくなったゲーム機のPSPや3DSを電子楽器に変えるホームブリューソフト「DZA.grain」の魅力や特徴を解説します。</p>
+        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#GIZMODO</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('7c39e7ba91d5b5a5c412531c3a1ed352', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.gizmodo.jp/article/psp_3ds_granular_sampler_dzagrain/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('7c39e7ba91d5b5a5c412531c3a1ed352')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-01dd94483d26c5efc260f17d066fa31a" data-id="01dd94483d26c5efc260f17d066fa31a" data-source="site-GIZMODO_Japan" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">国内</span>
+            <span class="source-tag">GIZMODO Japan</span>
+            <span>11/16 12:30</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">ChatGPT、ユーザーのクレカでお買い物をしてくれるようになったけど…、大丈夫？</h2>
+        <p class="card-summary">ChatGPTの新機能「ChatGPT Wallet」の仕組みと、AIエージェントによる決済の利便性やプライバシーに関する懸念を解説します。</p>
+        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#GIZMODO</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('01dd94483d26c5efc260f17d066fa31a', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.gizmodo.jp/article/2611-chatgpt-wallet-credit-card-ai/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('01dd94483d26c5efc260f17d066fa31a')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-b0555ded361241e545e3754d7574afb1" data-id="b0555ded361241e545e3754d7574afb1" data-source="site-OpenAI_Blog" data-score="4" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">企業</span>
+            <span class="source-tag">OpenAI Blog</span>
+            <span>11/16 12:00</span>
+          </div>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">Science at the Frontier: How scientists use ChatGPT</h2>
+        <p class="card-summary">Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery.</p>
+        <div class="tags-row"><span class="tag-badge">#企業</span><span class="tag-badge">#OpenAI</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('b0555ded361241e545e3754d7574afb1', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://openai.com/index/science-at-the-frontier" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('b0555ded361241e545e3754d7574afb1')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-1e825c801d7f8423cc8773b57e9fbd70" data-id="1e825c801d7f8423cc8773b57e9fbd70" data-source="site-GIZMODO_Japan" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">国内</span>
+            <span class="source-tag">GIZMODO Japan</span>
+            <span>11/16 11:00</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">人型ロボットのAtlas君、車輪を装備したら...。横滑り、360度回転ジャンプまで習得</h2>
+        <p class="card-summary">ボストン・ダイナミクス的人型ロボット「Atlas」の足に車輪を付けた実験映像を紹介。横滑りや360度回転ジャンプなど、AIの強化学習による驚きの最新動作を分かりやすく解説します。</p>
+        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#GIZMODO</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('1e825c801d7f8423cc8773b57e9fbd70', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.gizmodo.jp/article/2611-boston-dynamics-atlas-wheels/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('1e825c801d7f8423cc8773b57e9fbd70')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card " id="card-93842ed0b6b252cf8353e2aef89fbbee" data-id="93842ed0b6b252cf8353e2aef89fbbee" data-source="site-GIZMODO_Japan" data-score="3" data-featured="false">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">国内</span>
+            <span class="source-tag">GIZMODO Japan</span>
+            <span>11/16 10:45</span>
+          </div>
+          <div class="stars-badge" title="注目度 3/5">
+            <span>★★★☆☆</span>
+          </div>
+        </div>
+        <h2 class="card-title">「Photoshop」の名に騙されるな。2次元の壁はとっくに超えている</h2>
+        <p class="card-summary">Adobe MAXで発表された進化するPhotoshopの新機能やAI技術を紹介。光の調整や動画化、未来の技術まで画像編集の常識を覆す可能性をお伝えします。</p>
+        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#GIZMODO</span></div>
+        <div class="card-footer">
+          <button class="read-toggle-btn" onclick="toggleRead('93842ed0b6b252cf8353e2aef89fbbee', event)">
+            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
+          </button>
+          <a href="https://www.gizmodo.jp/article/2611-photoshop-ai-features-adobe-max/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('93842ed0b6b252cf8353e2aef89fbbee')">元記事を読む →</a>
+        </div>
+      </article>
+
+      <article class="article-card featured-pick" id="card-b73c6d7b39720723a8141c1acb8ba678" data-id="b73c6d7b39720723a8141c1acb8ba678" data-source="site-OpenAI_Blog" data-score="5" data-featured="true">
+        <div class="meta-row">
+          <div class="source-group">
+            <span class="category-tag">企業</span>
+            <span class="source-tag">OpenAI Blog</span>
+            <span>11/16 09:00</span>
           </div>
           <div class="stars-badge" title="注目度 5/5">
             <span>★★★★★</span>
           </div>
         </div>
-        <h2 class="card-title">AI stocks face a &quot;judgment week&quot;! NVIDIA&#x27;s earnings release and Anthropic&#x27;s listing will test the computing power narrative, while &quot;scary data&quot; and retail sector earnings reports will challenge interest rate hike expectations. - 富途牛牛</h2>
-        <p class="card-summary">AI stocks face a &quot;judgment week&quot;! NVIDIA&#x27;s earnings release and Anthropic&#x27;s listing will test the computing power narrative, while &quot;scary data&quot; and retail sector earnings reports will challenge interest rate hike expectations. 富途牛牛</p>
-        <div class="tags-row"><span class="tag-badge">#海外</span><span class="tag-badge">#Anthropic関連（海外メディア）</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('7ecd5af8bcd5b2ffb20fe44b3a55f92b', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQZ0xLTWxQaWFQMGMwSUl5MHExSkROMk4yZGMtWXZ4aGdHZ2dVUEZQc0FNT1lubjkwSkZ3eE9yQVdMMkRHcEVaNVMtVEVWS3hKT1NiUjczcjk3OVVZejNFVWRlZGR0SzhhRVJ3NlFsUTlMeDg5d1BBZTk3Ymk3eEd0ZzQyZzVVUzRGY0I5UFpHbzNabXRnY2ZvVDBBMnh0eEZH?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('7ecd5af8bcd5b2ffb20fe44b3a55f92b')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card featured-pick" id="card-91f9e4b726305cbc49a01d7c7d73f8bf" data-id="91f9e4b726305cbc49a01d7c7d73f8bf" data-source="site-Anthropic__________" data-score="4" data-featured="true">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">海外</span>
-            <span class="source-tag">Anthropic関連（海外メディア）</span>
-            <span>11/15 23:35</span>
-          </div>
-          <div class="stars-badge" title="注目度 4/5">
-            <span>★★★★☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">Nvidiaの収益とAnthropicの記録的なIPOデビューでウォール街のAI信仰を試す - BigGo Finance</h2>
-        <p class="card-summary">Nvidiaの収益とAnthropicの記録的なIPOデビューでウォール街のAI信仰を試す BigGo Finance</p>
-        <div class="tags-row"><span class="tag-badge">#海外</span><span class="tag-badge">#Anthropic関連（海外メディア）</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('91f9e4b726305cbc49a01d7c7d73f8bf', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE9Hekk0ZGdVemJjUks5NzZMeUpwaGRWN05WTDBzWTc4QlhlWThjRXRCenFsMHd6dEhmZnc4a1lmWnB4REJzWndkNUg3eDZKTkJWYl9CNmVtSXBjOXZhS285eWdtZXh1Y29PSW1mTDZTZEJaVTRPc1E?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('91f9e4b726305cbc49a01d7c7d73f8bf')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card featured-pick" id="card-63a6f5d61464568bd3a56c00154155c0" data-id="63a6f5d61464568bd3a56c00154155c0" data-source="site-Anthropic__________" data-score="4" data-featured="true">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">海外</span>
-            <span class="source-tag">Anthropic関連（海外メディア）</span>
-            <span>11/15 23:23</span>
-          </div>
-          <div class="stars-badge" title="注目度 4/5">
-            <span>★★★★☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">AnthropicのIPOは7倍の応募超過、AI業界のバロメーターとみなされている - KuCoin</h2>
-        <p class="card-summary">Anthropic の IPO は 7 倍の応募超過、AI 業界のバロメーターとみられる KuCoin</p>
-        <div class="tags-row"><span class="tag-badge">#海外</span><span class="tag-badge">#Anthropic関連（海外メディア）</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('63a6f5d61464568bd3a56c00154155c0', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPd1hYb1FrRnZSdXkxMmtoTEZxdDRnTVRaSDRBdTMyVjVFU1FNOUdOTjVMcFpGSjRzNXE2d2U2TUFJVHg5N3VJR2ZKZFFvQjBBT2pMWFQ0R2VLOUhuMVNrdEl4NHNEcDdFMzg4bDlIMWFmdDlKa3hsNThHSW5OQ2Q0UlpFQUN4V1daTVp3T1NnOElWX0hlbndHNkh6cw?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('63a6f5d61464568bd3a56c00154155c0')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card featured-pick" id="card-dbf7ed4c773a2082364c40f166a070ab" data-id="dbf7ed4c773a2082364c40f166a070ab" data-source="site-Hacker_News__AI_Top_" data-score="3" data-featured="true">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">開発</span>
-            <span class="source-tag">Hacker News (AI Top)</span>
-            <span>11/15 23:12</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">サウスヘブンのSpaceXAIの排水溝に化学物質が流出</h2>
-        <p class="card-summary">記事URL: https://wreg.com/news/chemical-spills-into-drainage-ditch-at-spacexai-in-southaven/ コメントURL: https://news.ycombinator.com/item?id=50511899 ポイント: 30 # コメント: 7</p>
-        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Hacker</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('dbf7ed4c773a2082364c40f166a070ab', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://wreg.com/news/chemical-spills-into-drainage-ditch-at-spacexai-in-southaven/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('dbf7ed4c773a2082364c40f166a070ab')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card featured-pick" id="card-6f428f46ffae8f8ac712388a17709944" data-id="6f428f46ffae8f8ac712388a17709944" data-source="site-ITmedia_AI_" data-score="3" data-featured="true">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">国内</span>
-            <span class="source-tag">ITmedia AI+</span>
-            <span>11/15 23:00</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">OpenAI、AIエージェントが代わりに支払う「ChatGPT Wallet」 カード番号は渡さず、購入ごとに生体認証</h2>
-        <p class="card-summary">OpenAIは、AIエージェント「dot」による決済機能「ChatGPT Wallet」を発表した。実際のカード情報を店舗に渡さず、購入ごとに生体認証を求める仕組みで安全性を確保する。米国のChatGPT Pro加入者向けに提供を開始した。将来は事前承認に基づく自律決済にも対応する計画。</p>
-        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#ITmedia</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('6f428f46ffae8f8ac712388a17709944', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://www.itmedia.co.jp/news/article/2611/16/2000003208/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('6f428f46ffae8f8ac712388a17709944')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card featured-pick" id="card-9081c17dd8d1ce833e116762a693aede" data-id="9081c17dd8d1ce833e116762a693aede" data-source="site-ITmedia_AI_" data-score="3" data-featured="true">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">国内</span>
-            <span class="source-tag">ITmedia AI+</span>
-            <span>11/15 23:00</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">自信がなければ「分かりません」──足立区が議会答弁AIにかけた“ガード” 「情報間違えれば区民に影響」の思い</h2>
-        <p class="card-summary">東京都足立区は2025年にグーグル・クラウド・ジャパンと包括連携協定を結び、議会答弁や区民の声への対応でAIエージェントの実証実験を進めてきた。同社イベントに登壇した担当者が、その仕組みと運用のコツを紹介した。</p>
-        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#ITmedia</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('9081c17dd8d1ce833e116762a693aede', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://www.itmedia.co.jp/aiplus/article/2611/16/2000003196/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('9081c17dd8d1ce833e116762a693aede')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card " id="card-0d4f41c9dfaa38616ec177586527e20e" data-id="0d4f41c9dfaa38616ec177586527e20e" data-source="site-ITmedia_AI_" data-score="3" data-featured="false">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">国内</span>
-            <span class="source-tag">ITmedia AI+</span>
-            <span>11/15 23:00</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">ガートナーが考えるフィジカルAI実装のロードマップと人の役割</h2>
-        <p class="card-summary">製造業でも多くの業務でAIが活用される中、注目を集めるフィジカルAIだが、製造業での使用状況はどうなっているのだろうか。フィジカルAIの現在地と共にAI時代の人の役割について、ガートナージャパン アナリストの鹿内健太郎氏に話を聞いた。</p>
-        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#ITmedia</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('0d4f41c9dfaa38616ec177586527e20e', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://monoist.itmedia.co.jp/mn/articles/2611/16/news050.html" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('0d4f41c9dfaa38616ec177586527e20e')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card " id="card-228f584f28fb3f32dee0c2b41d61abcb" data-id="228f584f28fb3f32dee0c2b41d61abcb" data-source="site-ITmedia_AI_" data-score="3" data-featured="false">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">国内</span>
-            <span class="source-tag">ITmedia AI+</span>
-            <span>11/15 22:45</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">DMG森精機が進める工作機械部品へのAM活用、自社イベントで最新5軸機も展示</h2>
-        <p class="card-summary">DMG森精機は、東京グローバルヘッドクォータにおいて自社イベント「東京テクノロジーウィーク」を開催した。国内初披露を含む最新の5軸加工機や複合加工機、金属積層造形機など17台の機械に加え、DXソリューションなどを展示した。</p>
-        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#ITmedia</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('228f584f28fb3f32dee0c2b41d61abcb', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://monoist.itmedia.co.jp/mn/articles/2611/17/news012.html" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('228f584f28fb3f32dee0c2b41d61abcb')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card featured-pick" id="card-5b676d5fbcb4d0a98dd2b3853db26ba4" data-id="5b676d5fbcb4d0a98dd2b3853db26ba4" data-source="site-Anthropic__________" data-score="4" data-featured="true">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">海外</span>
-            <span class="source-tag">Anthropic関連（海外メディア）</span>
-            <span>11/15 22:36</span>
-          </div>
-          <div class="stars-badge" title="注目度 4/5">
-            <span>★★★★☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">AI貿易を定義する人類のIPOが決定 - Semafor</h2>
-        <p class="card-summary">AI取引Semaforを定義するために人類のIPOが設定される</p>
-        <div class="tags-row"><span class="tag-badge">#海外</span><span class="tag-badge">#Anthropic関連（海外メディア）</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('5b676d5fbcb4d0a98dd2b3853db26ba4', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxOZlQxdnNRcUFscFMzSXdmVE9MMkh6eUF4TmlmQ0ZfRHNUSGlFQm44YW96RFBreF9Dc1lLOS0zYV9PUVNQQ04xMXlxM0p3NVM0Q3ZCOW5tdy1vb1Vqdlk4ZVVfSVB1cHFfVDlQVkVNbFVXX1BvSFJyQU9lLXdwOEJhdWRuQnVKdw?oc=5" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('5b676d5fbcb4d0a98dd2b3853db26ba4')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card featured-pick" id="card-df3e44b99410d919ee7f29ed52f9668c" data-id="df3e44b99410d919ee7f29ed52f9668c" data-source="site-OpenAI_Blog" data-score="4" data-featured="true">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">企業</span>
-            <span class="source-tag">OpenAI Blog</span>
-            <span>11/15 22:00</span>
-          </div>
-          <div class="stars-badge" title="注目度 4/5">
-            <span>★★★★☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">格子上の標準モデルを定義するためのステップ</h2>
-        <p class="card-summary">標準モデルの非摂動格子定義の候補と、GPT-6 Astra がアイデアを詳細な証明に変えるのにどのように役立ったかを調べてください。</p>
+        <h2 class="card-title">LVMH’s Media Division announces strategic partnership with OpenAI</h2>
+        <p class="card-summary">LVMH’s Media Division and OpenAI announce a partnership to support journalism with AI and make its publications more accessible through ChatGPT.</p>
         <div class="tags-row"><span class="tag-badge">#企業</span><span class="tag-badge">#OpenAI</span></div>
         <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('df3e44b99410d919ee7f29ed52f9668c', event)">
+          <button class="read-toggle-btn" onclick="toggleRead('b73c6d7b39720723a8141c1acb8ba678', event)">
             <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
           </button>
-          <a href="https://openai.com/index/step-toward-defining-the-standard-model" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('df3e44b99410d919ee7f29ed52f9668c')">元記事を読む →</a>
+          <a href="https://openai.com/index/lvmh-media-division-partnership" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('b73c6d7b39720723a8141c1acb8ba678')">元記事を読む →</a>
         </div>
       </article>
 
-      <article class="article-card featured-pick" id="card-e1f75517207ad798601e155052dd8093" data-id="e1f75517207ad798601e155052dd8093" data-source="site-OpenAI_Blog" data-score="4" data-featured="true">
+      <article class="article-card " id="card-789d923f5002de65b45c8232ade0daac" data-id="789d923f5002de65b45c8232ade0daac" data-source="site-arXiv_cs_AI" data-score="4" data-featured="false">
         <div class="meta-row">
           <div class="source-group">
-            <span class="category-tag">企業</span>
-            <span class="source-tag">OpenAI Blog</span>
-            <span>11/15 22:00</span>
+            <span class="category-tag">論文</span>
+            <span class="source-tag">arXiv cs.AI</span>
+            <span>11/16 05:00</span>
           </div>
           <div class="stars-badge" title="注目度 4/5">
             <span>★★★★☆</span>
           </div>
         </div>
-        <h2 class="card-title">科学に関する新しいブログ</h2>
-        <p class="card-summary">OpenAI 科学ブログでは、新しい発見、実践的な方法、科学的発見を進めるために AI を使用している研究者からの直接の報告を共有しています。</p>
-        <div class="tags-row"><span class="tag-badge">#企業</span><span class="tag-badge">#OpenAI</span></div>
+        <h2 class="card-title">When Should LLM Agents Forget? Memory Filtering Under Query-Critical Resolver Errors</h2>
+        <p class="card-summary">arXiv:2611.17338v1 Announce Type: new Abstract: LLM memory systems often delete facts classified as stale. We show that this hard-filtering step can reduce downstream accuracy when resolver errors delete query-critical facts. Across three models, a controlled sensitivity intervention moves hard-drop</p>
+        <div class="tags-row"><span class="tag-badge">#論文</span><span class="tag-badge">#arXiv</span></div>
         <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('e1f75517207ad798601e155052dd8093', event)">
+          <button class="read-toggle-btn" onclick="toggleRead('789d923f5002de65b45c8232ade0daac', event)">
             <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
           </button>
-          <a href="https://openai.com/index/our-new-blog-for-science" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('e1f75517207ad798601e155052dd8093')">元記事を読む →</a>
+          <a href="https://arxiv.org/abs/2611.17338" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('789d923f5002de65b45c8232ade0daac')">元記事を読む →</a>
         </div>
       </article>
 
-      <article class="article-card " id="card-d4c0a64ccc90d4345c809280741253ed" data-id="d4c0a64ccc90d4345c809280741253ed" data-source="site-Hacker_News__AI_Top_" data-score="3" data-featured="false">
+      <article class="article-card " id="card-910f04591538ae53dcb7fc4dda3aaf6d" data-id="910f04591538ae53dcb7fc4dda3aaf6d" data-source="site-arXiv_cs_AI" data-score="4" data-featured="false">
         <div class="meta-row">
           <div class="source-group">
-            <span class="category-tag">開発</span>
-            <span class="source-tag">Hacker News (AI Top)</span>
-            <span>11/15 21:38</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">ボーイング・ロッキードロケットが飛行中に失敗、アマゾン衛星のペイロードを破壊</h2>
-        <p class="card-summary">記事のURL: https://www.reuters.com/business/aerospace-defense/us-rocket-fails-after-launch-payload-amazon-internet-satellites-destroyed-2026-11-15/ コメントURL: https://news.ycombinator.com/item?id=50511072 ポイント: 44 # コメント: 26</p>
-        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Hacker</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('d4c0a64ccc90d4345c809280741253ed', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://www.reuters.com/business/aerospace-defense/us-rocket-fails-after-launch-payload-amazon-internet-satellites-destroyed-2026-11-15/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('d4c0a64ccc90d4345c809280741253ed')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card featured-pick" id="card-dc75436c077e3dc42e470a41756549e3" data-id="dc75436c077e3dc42e470a41756549e3" data-source="site-Hacker_News__AI_Top_" data-score="4" data-featured="true">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">開発</span>
-            <span class="source-tag">Hacker News (AI Top)</span>
-            <span>11/15 21:10</span>
+            <span class="category-tag">論文</span>
+            <span class="source-tag">arXiv cs.AI</span>
+            <span>11/16 05:00</span>
           </div>
           <div class="stars-badge" title="注目度 4/5">
             <span>★★★★☆</span>
           </div>
         </div>
-        <h2 class="card-title">エージェントはハッキング可能なものを選択します</h2>
-        <p class="card-summary">記事URL: https://geoffstearns.com/blog/your-agent-will-pick-the-hackable-one/ コメントURL: https://news.ycombinator.com/item?id=50510799 ポイント: 69 # コメント: 39</p>
-        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Hacker</span></div>
+        <h2 class="card-title">Does the Ranking Hold? A Practitioner-Facing Audit of Hallucination Detectors on Small, Quantized, On-Device LLMs</h2>
+        <p class="card-summary">arXiv:2611.17339v1 Announce Type: new Abstract: Hallucination detection for large language models is dominated by methods evaluated on 7B-70B research models with abundant sampling budgets and exact-match or ROUGE correctness labels. The small models practitioners actually ship on-device, Phi-3-mini</p>
+        <div class="tags-row"><span class="tag-badge">#論文</span><span class="tag-badge">#arXiv</span></div>
         <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('dc75436c077e3dc42e470a41756549e3', event)">
+          <button class="read-toggle-btn" onclick="toggleRead('910f04591538ae53dcb7fc4dda3aaf6d', event)">
             <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
           </button>
-          <a href="https://geoffstearns.com/blog/your-agent-will-pick-the-hackable-one/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('dc75436c077e3dc42e470a41756549e3')">元記事を読む →</a>
+          <a href="https://arxiv.org/abs/2611.17339" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('910f04591538ae53dcb7fc4dda3aaf6d')">元記事を読む →</a>
         </div>
       </article>
 
-      <article class="article-card " id="card-04a50513d7dc314b82b4b28108c97bdf" data-id="04a50513d7dc314b82b4b28108c97bdf" data-source="site-Hacker_News__AI_Top_" data-score="3" data-featured="false">
+      <article class="article-card " id="card-f514627bdf0f2f27c7b25f1dcfc07d83" data-id="f514627bdf0f2f27c7b25f1dcfc07d83" data-source="site-arXiv_cs_AI" data-score="4" data-featured="false">
         <div class="meta-row">
           <div class="source-group">
-            <span class="category-tag">開発</span>
-            <span class="source-tag">Hacker News (AI Top)</span>
-            <span>11/15 20:37</span>
+            <span class="category-tag">論文</span>
+            <span class="source-tag">arXiv cs.AI</span>
+            <span>11/16 05:00</span>
           </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
+          <div class="stars-badge" title="注目度 4/5">
+            <span>★★★★☆</span>
           </div>
         </div>
-        <h2 class="card-title">バルカンロケット、帰還打ち上げ中に失敗、アマゾンの衛星40機を失う</h2>
-        <p class="card-summary">記事のURL: https://www.space.com/space-exploration/launches-spacecraft/ula-vulcan-centaur-return-to-flight-amazon-leo-internet-satellite-launch コメントURL: https://news.ycombinator.com/item?id=50510442 ポイント: 89 # コメント: 42</p>
-        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Hacker</span></div>
+        <h2 class="card-title">LoRAWeaver: Directional Adapter Routing in LoRA Representation Space</h2>
+        <p class="card-summary">arXiv:2611.17340v1 Announce Type: new Abstract: Large language models are expensive to update through full retraining. Parameter-efficient fine-tuning reduces the cost of adaptation, but repeated adaptation creates a growing pool of task-specific LoRA adapters. This pool complicates adapter selectio</p>
+        <div class="tags-row"><span class="tag-badge">#論文</span><span class="tag-badge">#arXiv</span></div>
         <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('04a50513d7dc314b82b4b28108c97bdf', event)">
+          <button class="read-toggle-btn" onclick="toggleRead('f514627bdf0f2f27c7b25f1dcfc07d83', event)">
             <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
           </button>
-          <a href="https://www.space.com/space-exploration/launches-spacecraft/ula-vulcan-centaur-return-to-flight-amazon-leo-internet-satellite-launch" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('04a50513d7dc314b82b4b28108c97bdf')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card " id="card-e946dd3a48db26080d2abb299f840b34" data-id="e946dd3a48db26080d2abb299f840b34" data-source="site-Zenn__AI_Topic_" data-score="3" data-featured="false">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">開発</span>
-            <span class="source-tag">Zenn (AI Topic)</span>
-            <span>11/15 16:17</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">作りながら鍛えるコードリーディング力</h2>
-        <p class="card-summary">満たしたいこと AIに作らせたコードを自分が理解し、｢いいコードだ｣と銘を打つまでに時間がかかる。要はコードリーディングが遅い。効率的に読むにはどうすればいいんだろう。 自分なりの結論 前提 他の人のコードを読む時は、全部を読む必要はない。構造を把握し、保守やセキュリティ的に危なそうなものを中心に見る。 自分のコードは、各コードを説明できるようにする。 具体的な手順 他の人、自分が作ったコードにかかわらず、コード読む時は以下が良さそう。 しかし他の人のコードの場合はすべては読まず、さらに重要なポイントを押さえて読む。 AIに作成してもらった場合も他の人に作ってもらった...</p>
-        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('e946dd3a48db26080d2abb299f840b34', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://zenn.dev/gen_tokunaga/articles/bdf9e8e0faf872" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('e946dd3a48db26080d2abb299f840b34')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card " id="card-314b53c0ccaa99e3a8d177fdca741c0a" data-id="314b53c0ccaa99e3a8d177fdca741c0a" data-source="site-Zenn__AI_Topic_" data-score="3" data-featured="false">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">開発</span>
-            <span class="source-tag">Zenn (AI Topic)</span>
-            <span>11/15 15:46</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">時事プローブと公式直結基準でAPI中継のモデル劣化を検知する</h2>
-        <p class="card-summary">原文： Folkbench モデル劣化検知を発表：時事・モデル指紋プローブと独立公式ベースラインによる API 中継の継続検証 モデルのリーダーボードは、公式環境での理論上限を測ります。アップタイム監視は、エンドポイントが応答するかどうかを見ます。どちらも、Claude Code や Codex からサードパーティの API 中継を使うときの中心的な問いには答えません。その経路でも、推論の深さや制約遵守、モデル固有の振る舞いが公式直結のままか、ということです。 HTTP 200 と流暢な短文は、その保証にはなりません。思考が短いぶん、かえって速く見えることさえあります。この記事は Fo...</p>
-        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('314b53c0ccaa99e3a8d177fdca741c0a', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://zenn.dev/folkbench/articles/c90bdf45161bf2" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('314b53c0ccaa99e3a8d177fdca741c0a')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card " id="card-c74ff09cbe34a0c71627344493613b92" data-id="c74ff09cbe34a0c71627344493613b92" data-source="site-Zenn__AI_Topic_" data-score="3" data-featured="false">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">開発</span>
-            <span class="source-tag">Zenn (AI Topic)</span>
-            <span>11/15 15:23</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">Fireworks AI のセキュリティインシデントについて調べてみた — 何が起き、どこに影響したのか</h2>
-        <p class="card-summary">はじめに 個人で Notion の Business プランを契約して、Notion AI を使っている。そのワークスペースに、Notion から「取引先の Fireworks AI で起きたセキュリティインシデントで、影響を受けたかもしれない」というメールが届いていた。自分にも影響がありそうだったので、Fireworks で何が起き、ほかにどこへ影響していそうかを調べてみることにした。 この記事では、Fireworks の事件の全体 (2 回の侵入、評価ジョブと鍵、ほかの影響先、同じ月に続いた事件) を、自分用のメモも兼ねてざっくりまとめる。同じ話を、約 24 分の解説動画にもした...</p>
-        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('c74ff09cbe34a0c71627344493613b92', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://zenn.dev/pollenjp/articles/2026-11-10-fireworks-ai-incident" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('c74ff09cbe34a0c71627344493613b92')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card " id="card-852c0df791658650631605824a7d5077" data-id="852c0df791658650631605824a7d5077" data-source="site-Zenn__AI_Topic_" data-score="3" data-featured="false">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">開発</span>
-            <span class="source-tag">Zenn (AI Topic)</span>
-            <span>11/15 15:09</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">いきなり本体を刷らない！「Pick-Up Bench」のタイヤ破損（TR-003）と検証片ルール</h2>
-        <p class="card-summary">3Dプリンターで新しい形状やマルチカラー・専用サポート材を試すとき、最初から本体を丸ごと印刷して失敗すると、材料も時間も大きくロスしてしまいます。 そこで NEKOMO プロジェクトでは、本体を刷る前に 底面数ミリだけを切り出した「検証片」 を先に印刷して確かめるルールを運用しています。今回は、長辺約60 mmの車モデル「Pick-Up Bench」で起きたタイヤ周辺の破損（NEKOMO-TR-003）と、検証片ルールがどう役立ったかを紹介します。 プロジェクトの全データと不具合記録は、以下の GitHub リポジトリで公開しています。 https://github.com/Sunwo...</p>
-        <div class="tags-row"><span class="tag-badge">#開発</span><span class="tag-badge">#Zenn</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('852c0df791658650631605824a7d5077', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://zenn.dev/sunwood_ai_labs/articles/20261114-nekoneko-04-pickup-bench-coupon-rule" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('852c0df791658650631605824a7d5077')">元記事を読む →</a>
-        </div>
-      </article>
-
-      <article class="article-card " id="card-4cd4ee450edb362116ad091b1ecc01be" data-id="4cd4ee450edb362116ad091b1ecc01be" data-source="site-GIZMODO_Japan" data-score="3" data-featured="false">
-        <div class="meta-row">
-          <div class="source-group">
-            <span class="category-tag">国内</span>
-            <span class="source-tag">GIZMODO Japan</span>
-            <span>11/15 02:00</span>
-          </div>
-          <div class="stars-badge" title="注目度 3/5">
-            <span>★★★☆☆</span>
-          </div>
-        </div>
-        <h2 class="card-title">Ankerの新イヤホン、着けたの忘れるレベルで軽快でした。AIボイスレコーダー搭載モデルも登場</h2>
-        <p class="card-summary">Ankerの新作イヤーカフ型イヤホンAeroClip 2の特徴や装着感をレビュー。AIボイスレコーダー搭載のProモデルも紹介します。</p>
-        <div class="tags-row"><span class="tag-badge">#国内</span><span class="tag-badge">#GIZMODO</span></div>
-        <div class="card-footer">
-          <button class="read-toggle-btn" onclick="toggleRead('4cd4ee450edb362116ad091b1ecc01be', event)">
-            <span class="read-icon">✓</span> <span class="read-text">既読にする</span>
-          </button>
-          <a href="https://www.gizmodo.jp/article/2611-anker-aeroclip-2/" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('4cd4ee450edb362116ad091b1ecc01be')">元記事を読む →</a>
+          <a href="https://arxiv.org/abs/2611.17340" target="_blank" rel="noopener noreferrer" class="origin-link" onclick="markRead('f514627bdf0f2f27c7b25f1dcfc07d83')">元記事を読む →</a>
         </div>
       </article>
     </div>
